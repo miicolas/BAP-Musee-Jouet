@@ -3,3 +3,6 @@
 @tailwind utilities;
 
 
+.r3f-canvas {
+    touch-action: none;
+}

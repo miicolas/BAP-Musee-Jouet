@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { avatars } from "../lib/utils";
 import CardAvatar from "../components/cards/cardAvatar";
 
-export default function Home() {
+export default function ChoiceAvatar() {
   return (
     <div>
       <Link to="/">
