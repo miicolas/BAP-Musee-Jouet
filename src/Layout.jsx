@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home.jsx";
-import About from "./pages/About.jsx";
+import Avatar from "./pages/Avatar.jsx";
+import ChoiceAvatar from "./pages/ChoiceAvatar.jsx";
+import Questions from "./pages/Questions.jsx";
 
 export default function Layout() {
   return (
@@ -8,7 +10,9 @@ export default function Layout() {
       <Router>
         <Routes>
           <Route path="/" exact element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/avatar" element={<Avatar />} />
+          <Route path="/choice-avatar" element={<ChoiceAvatar />} />
+          <Route path="/questions/:idavatar" element={<Questions />} />
         </Routes>
       </Router>
     </div>
