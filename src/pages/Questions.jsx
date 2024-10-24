@@ -1,13 +1,16 @@
 import { Link, useParams } from "react-router-dom";
 import { questions } from "../lib/utils"; 
 import CardQuestion from "../components/cards/cardQuestion";
+import socketIO from 'socket.io-client';
+
 
 export default function Questions() {
   const { idavatar } = useParams();
   const avatarId = parseInt(idavatar);
   const avatarData = questions[0].avatars.find((avatar) => avatar.id === avatarId);
   const avatarQuestions = avatarData ? avatarData.questions : [];
-
+  const socket = socketIO.connect('http://localhost:4000');
+  
   return (
     <div>
       <Link to="/">

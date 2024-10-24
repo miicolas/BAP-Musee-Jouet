@@ -5,6 +5,15 @@ import { useGLTF } from "@react-three/drei";
 
 export default function Avatar() {
   
+
+    const models = [
+      {
+        id : 1, 
+        path : "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/male/model.gltf", 
+      }
+    ]
+
+
   const avatarMale = useGLTF("https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/male/model.gltf")
 
 
