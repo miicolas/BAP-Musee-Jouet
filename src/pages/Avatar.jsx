@@ -1,12 +1,25 @@
 import { Link } from "react-router-dom";
 import { Canvas } from "@react-three/fiber";
 import Experience from "../components/cards/models/Experience";
+import { useEffect } from "react";
 
 export default function Avatar() {
+
+  const handleContextMenu = (event) => {
+    event.preventDefault();
+  };
+
+  useEffect(() => {
+    document.addEventListener("contextmenu", handleContextMenu);
+    return () => {
+      document.removeEventListener("contextmenu", handleContextMenu);
+    };
+  }, []);
+
   return (
     <div >
-      <Link to="/" className="absolute top-4 left-4 z-50">
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      <Link to="/" className="absolute z-50 top-4 left-4">
+        <button className="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700">
           Retour
         </button>
       </Link>

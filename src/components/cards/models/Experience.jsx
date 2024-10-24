@@ -9,7 +9,7 @@ import Avatar from "./Avatar";
 export default function Experience() {
   return (
     <>
-      <Environment preset="city" />
+      <Environment preset="apartment" />
       <color attach="background" args={["#695b5b"]} />
       <PresentationControls
         global
