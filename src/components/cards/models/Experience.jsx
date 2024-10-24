@@ -6,7 +6,7 @@ import {
 } from "@react-three/drei";
 import Avatar from "./Avatar";
 
-export default function Experience() {
+export default function Experience () {
   return (
     <>
       <Environment preset="apartment" />
