@@ -5,6 +5,7 @@ import ChoiceAvatar from "./pages/ChoiceAvatar.jsx";
 import Questions from "./pages/Questions.jsx";
 
 export default function Layout() {
+
   return (
     <div>
       <Router>
