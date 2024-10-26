@@ -6,7 +6,7 @@ import {
   } from "@react-three/drei";
   import Avatar from "./avatar";
   
-  export default function Experience () {
+  export default function Experience ({avatarID}) {
     return (
       <>
         <Environment preset="apartment" />
@@ -20,7 +20,7 @@ import {
           snap={{ mass: 4, tension: 400 }}
         >
           <Float rotationIntensity={0.4}>
-            <Avatar position={[0, 0, 0]} /> {/* Incluez Avatar directement ici */}
+            <Avatar position={[0, 0, 0]} avatarID={avatarID} />
           </Float>
         </PresentationControls>
       </>

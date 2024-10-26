@@ -6,11 +6,14 @@ import Layout from "../layout";
 import {questions} from "../lib/utils";
 
 import socket from "../lib/socket-singleton";
-import socketIO from "socket.io-client";
+import {TypeAnimation} from 'react-type-animation';
 
 export default function Avatar() {
     const [response, setResponse] = useState(null);
     const [socketResponse, setSocketResponse] = useState(null);
+    const [animateKey, setAnimateKey] = useState(0);
+    const [avatarID, setAvatarID] = useState(null);
+
     const handleContextMenu = (event) => {
         event.preventDefault();
     };
@@ -22,28 +25,38 @@ export default function Avatar() {
         };
     }, []);
 
-
     useEffect(() => {
         socket.on("question", (id) => {
             console.log("Received question ID:", id);
             setSocketResponse(id);
         });
+        socket.on("avatar", (id) => {
+            console.log("Received avatar ID:", id);
+            setAvatarID(id);
+        });
         return () => {
             socket.off("question");
+            socket.off("avatar");
         };
     }, []);
 
-    // Update response based on socketResponse
     useEffect(() => {
-        if (socketResponse) {
-            const question = questions.flatMap(q => q.avatars)
-                .flatMap(avatar => avatar.questions)
-                .find(question => question.id === socketResponse);
-            if (question) {
-                setResponse(question.answer);
+        if (socketResponse && avatarID) {
+            const avatar = questions.flatMap(q => q.avatars).find(avatar => avatar.id === avatarID);
+            if (avatar) {
+                const question = avatar.questions.find(question => question.id === socketResponse);
+                if (question) {
+                    setResponse(question.answer);
+                }
             }
         }
-    }, [socketResponse]);
+    }, [socketResponse, avatarID]);
+
+    useEffect(() => {
+        if (response) {
+            setAnimateKey(prevKey => prevKey + 1);
+        }
+    }, [response]);
 
 
     return (
@@ -53,12 +66,29 @@ export default function Avatar() {
                     Retour
                 </button>
             </Link>
-
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-20 max-w-sm bg-amber-700 z-50 flex justify-center items-center p-6">{response ? <p>{response}</p> : <p>Aucune question n'a été répondu à pour l'instant.</p>}</div>
-
+            <div
+                className="absolute bottom-0 left-1/2 -translate-x-1/2 h-20 max-w-sm bg-amber-700 z-50 flex justify-center items-center p-6">
+                {
+                    response ? (
+                        <TypeAnimation
+                            key={animateKey}
+                            sequence={[
+                                response,
+                                1000,
+                            ]}
+                            wrapper="span"
+                            speed={50}
+                            style={{fontSize: '1em', display: 'inline-block'}}
+                            repeat={0}
+                        />
+                    ) : (
+                        <p>Aucune question n'a été répondu à pour l'instant.</p>
+                    )
+                }
+            </div>
             <Canvas shadows camera={{position: [0, 2, 5], fov: 75}} style={{width: "100vw", height: "100vh"}}
                     className="r3f-canvas">
-                <Experience/>
+                <Experience avatarID={avatarID}/>
             </Canvas>
         </Layout>
     );

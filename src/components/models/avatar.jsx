@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
-import socketIO from "socket.io-client";
-import { useGLTF } from "@react-three/drei";
-import socket from "../../lib/socket-singleton.js";
 
-export default function Avatar() {
+import { useGLTF } from "@react-three/drei";
+
+export default function Avatar({avatarID}) {
   const [questionId, setQuestionId] = useState(null);
-  const [avatarId, setAvatarId] = useState(null);
 
   const avatars = [
     {
@@ -24,21 +22,8 @@ export default function Avatar() {
     },
   ];
 
-  useEffect(() => {
-    socket.on("avatar", (id) => {
-      console.log("Received avatar ID:", id);
-      setAvatarId(id);
-    });
-    return () => {
-      socket.off("avatar");
-
-    };
-  }, []);
-
-  const avatar = avatars.find((avatar) => avatar.id === avatarId);
+  const avatar = avatars.find((avatar) => avatar.id === avatarID);
   const avatarMale = avatar ? useGLTF(avatar.gltf) : { scene: null }; // Handle undefined avatar
-
-  console.log(avatarId);
 
   return (
     <>
