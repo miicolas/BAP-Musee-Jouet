@@ -1,5 +1,6 @@
 import socketIO from "socket.io-client";
 
-const socket = socketIO.connect("http://localhost:4000/");
+const apiKey = import.meta.env.VITE_SOCKET_URL;
 
+const socket = socketIO.connect(apiKey);
 export default socket;
