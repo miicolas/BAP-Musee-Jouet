@@ -29,14 +29,9 @@ export default function Avatar() {
       console.log("Received avatar ID:", id);
       setAvatarId(id);
     });
-
-    socket.on("question", (id) => {
-      console.log("Received question ID:", id);
-      setQuestionId(id);
-    });
     return () => {
       socket.off("avatar");
-      socket.off("question");
+
     };
   }, []);
 
@@ -44,7 +39,6 @@ export default function Avatar() {
   const avatarMale = avatar ? useGLTF(avatar.gltf) : { scene: null }; // Handle undefined avatar
 
   console.log(avatarId);
-  console.log(questionId);
 
   return (
     <>

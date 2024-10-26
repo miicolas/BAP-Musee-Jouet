@@ -1,9 +1,9 @@
-import { Link, useParams, Navigate } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { questions } from "../lib/utils";
 import CardQuestion from "../components/card-question";
-import socketIO from "socket.io-client";
 import Layout from "../layout";
 import useInactivityRedirect from "../lib/use-inactivity-redirect";
+
 
 export default function Questions() {
   const { idavatar } = useParams();
@@ -12,8 +12,9 @@ export default function Questions() {
     (avatar) => avatar.id === avatarId
   );
   const avatarQuestions = avatarData ? avatarData.questions : [];
-  const socket = socketIO.connect("http://localhost:4000");
-  useInactivityRedirect(1200);
+  useInactivityRedirect(120000);
+
+
 
   return (
     <Layout>
