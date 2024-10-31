@@ -42,7 +42,7 @@ export default function Avatar() {
 
     useEffect(() => {
         if (socketResponse && avatarID) {
-            const avatar = questions.flatMap(q => q.avatars).find(avatar => avatar.id === avatarID);
+            const avatar = questions.flatMap(q => q.avatars).find(avatar => avatar.id === avatarID); // La méthode flatMap() permet d'appliquer une fonction à chaque élément du tableau puis d'aplatir le résultat en un tableau et ensuite on trouve l'avatar correspondant à l'ID donné en paramètre.
             if (avatar) {
                 const question = avatar.questions.find(question => question.id === socketResponse);
                 if (question) {
@@ -57,7 +57,6 @@ export default function Avatar() {
             setAnimateKey(prevKey => prevKey + 1);
         }
     }, [response]);
-
 
     return (
         <Layout>
