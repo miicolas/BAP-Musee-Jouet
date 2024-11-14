@@ -1,12 +1,12 @@
-import {Link} from "react-router-dom";
-import {Canvas} from "@react-three/fiber";
+import { Link } from "react-router-dom";
+import { Canvas } from "@react-three/fiber";
 import Experience from "../components/models/experience";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import Layout from "../layout";
-import {questions} from "../lib/utils";
+import { questions } from "../lib/utils";
 
 import socket from "../lib/socket-singleton";
-import {TypeAnimation} from 'react-type-animation';
+import { TypeAnimation } from 'react-type-animation';
 
 export default function Avatar() {
     const [response, setResponse] = useState(null);
@@ -42,7 +42,7 @@ export default function Avatar() {
 
     useEffect(() => {
         if (socketResponse && avatarID) {
-            const avatar = questions.flatMap(q => q.avatars).find(avatar => avatar.id === avatarID); // La méthode flatMap() permet d'appliquer une fonction à chaque élément du tableau puis d'aplatir le résultat en un tableau et ensuite on trouve l'avatar correspondant à l'ID donné en paramètre.
+            const avatar = questions.flatMap(q => q.avatars).find(avatar => avatar.id === avatarID);
             if (avatar) {
                 const question = avatar.questions.find(question => question.id === socketResponse);
                 if (question) {
@@ -65,30 +65,46 @@ export default function Avatar() {
                     Retour
                 </button>
             </Link>
-            <div
-                className="absolute bottom-0 left-1/2 -translate-x-1/2 h-20 max-w-sm bg-amber-700 z-50 flex justify-center items-center p-6">
-                {
-                    response ? (
-                        <TypeAnimation
-                            key={animateKey}
-                            sequence={[
-                                response,
-                                1000,
-                            ]}
-                            wrapper="span"
-                            speed={50}
-                            style={{fontSize: '1em', display: 'inline-block'}}
-                            repeat={0}
-                        />
-                    ) : (
-                        <p>Aucune question n'a été répondu à pour l'instant.</p>
-                    )
-                }
-            </div>
-            <Canvas shadows camera={{position: [0, 2, 5], fov: 75}} style={{width: "100vw", height: "100vh"}}
-                    className="r3f-canvas">
-                <Experience avatarID={avatarID}/>
-            </Canvas>
+
+            {/* Conditional rendering based on avatarID */}
+            {avatarID ? (
+                <>
+                    {/* Response Display */}
+                    <div
+                        className="absolute bottom-0 left-1/2 -translate-x-1/2 h-20 max-w-sm bg-amber-700 z-50 flex justify-center items-center p-6">
+                        {response ? (
+                            <TypeAnimation
+                                key={animateKey}
+                                sequence={[
+                                    response,
+                                    1000,
+                                ]}
+                                wrapper="span"
+                                speed={50}
+                                style={{ fontSize: '1em', display: 'inline-block' }}
+                                repeat={0}
+                            />
+                        ) : (
+                            <p>Aucune question n'a été répondu à pour l'instant.</p>
+                        )}
+                    </div>
+
+                    {/* 3D Canvas */}
+                    <Canvas shadows camera={{ position: [0, 2, 5], fov: 75 }} style={{ width: "100vw", height: "100vh" }}
+                        className="r3f-canvas">
+                        <Experience avatarID={avatarID} />
+                    </Canvas>
+                </>
+            ) : (
+                // Homepage when no avatar is selected
+                <div className="flex flex-col items-center justify-center h-screen bg-gray-900 text-white">
+                    <h1 className="text-4xl font-bold mb-4">Bienvenue sur l'Application Avatar</h1>
+                    <p className="text-lg mb-8">Veuillez sélectionner un avatar pour commencer l'expérience.</p>
+                    <p className="text-sm text-gray-400">
+                        En attente de la sélection d'un avatar en temps réel...
+                    </p>
+                </div>
+            )}
         </Layout>
     );
 }
