@@ -83,10 +83,23 @@ export default function Avatar() {
                     Retour
                 </button>
             </Link>
-            <TypeAnimationEffect response={response} animateKey={animateKey} />
-            <Canvas shadows camera={{ position: [0, 2, 5], fov: 75 }} style={{ width: "100vw", height: "100vh" }} className="r3f-canvas">
-                <Experience avatarID={avatarID} />
-            </Canvas>
+            { avatarID ? (
+                <>
+                <TypeAnimationEffect response={response} animateKey={animateKey} />
+                <Canvas shadows camera={{ position: [0, 2, 5], fov: 75 }} style={{ width: "100vw", height: "100vh" }} className="r3f-canvas">
+                    <Experience avatarID={avatarID} />
+                </Canvas>
+                </>
+            ) : (
+                // Homepage when no avatar is selected
+                <div className="flex flex-col items-center justify-center h-screen bg-gray-900 text-white">
+                    <h1 className="text-4xl font-bold mb-4">Bienvenue sur l'Application Avatar</h1>
+                    <p className="text-lg mb-8">Veuillez sélectionner un avatar pour commencer l'expérience.</p>
+                    <p className="text-sm text-gray-400">
+                        En attente de la sélection d'un avatar en temps réel...
+                    </p>
+                </div>
+            )}
             <SoundManager sound={sound} play={!!response} />
             {isModalOpen && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
