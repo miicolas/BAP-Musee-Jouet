@@ -10,18 +10,21 @@ export const questions = [
                         question: "Qui est Barbie ?",
                         answer:
                             "Barbie est un personnage iconique connu pour sa mode et son style.",
+                        sound: "bizon",
                     },
                     {
                         id: 2,
                         question: "Que peut faire Barbie ?",
                         answer:
                             "Barbie peut se transformer en plusieurs rôles, y compris médecin, astronaute, et bien plus encore.",
+                        sound: "meow",
                     },
                     {
                         id: 3,
                         question: "Pourquoi Barbie est-elle populaire ?",
                         answer:
                             "Barbie est populaire en raison de sa capacité à inspirer la créativité et à encourager les jeunes à explorer diverses carrières.",
+                        sound: "minecraft",
                     },
                 ],
             },
@@ -83,18 +86,20 @@ export const avatars = [
         name: "Barbie",
         description: "Barbie est une des plus grandes idées de l'époque. Elle est un robot de mode, qui peut se transformer en femme, en homme ou en animal. Elle est très intelligente et elle peut parfois se faire des idées et des rêves.",
         image: "https://gallerypng.com/wp-content/uploads/2024/07/hot-barbie-png-image.png",
+
     },
     {
         id: 2,
         name: "Lego",
-        description:"Lego est un des plus grands inventeurs de l'époque. Il a créé des objets de toutes sortes, des robots, des véhicules, des animaux, des personnages et des jeux. Il a également créé des produits pour la santé, la beauté et la mode.",
+        description: "Lego est un des plus grands inventeurs de l'époque. Il a créé des objets de toutes sortes, des robots, des véhicules, des animaux, des personnages et des jeux. Il a également créé des produits pour la santé, la beauté et la mode.",
         image: "https://png.pngtree.com/png-clipart/20230914/original/pngtree-lego-minifigure-vector-png-image_12154297.png",
+
     }
     ,
     {
         id: 3,
         name: "Mario",
-        description:"Mario est un des plus grands jeux vidéo de l'époque. Il a été créé par Nintendo et il a été le plus populaire des jeux vidéo de l'époque. Il est très populaire aujourd'hui et il est devenu un des plus grands dessinateurs de jeux vidéo.",
+        description: "Mario est un des plus grands jeux vidéo de l'époque. Il a été créé par Nintendo et il a été le plus populaire des jeux vidéo de l'époque. Il est très populaire aujourd'hui et il est devenu un des plus grands dessinateurs de jeux vidéo.",
         image: "https://i.pinimg.com/originals/e8/bb/b7/e8bbb719dff7201aa84de5495a9c8908.png",
     },
 
