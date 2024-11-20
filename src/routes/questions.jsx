@@ -3,6 +3,7 @@ import { questions } from "../lib/utils";
 import CardQuestion from "../components/card-question";
 import Layout from "../layout";
 import useInactivityRedirect from "../lib/use-inactivity-redirect";
+import NoticesStars from "../components/notices-stars";
 
 
 export default function Questions() {
@@ -23,6 +24,7 @@ export default function Questions() {
           Retour
         </button>
       </Link>
+        <NoticesStars/>
       <h1>
         Questions pour {avatarData ? avatarData.name : "Avatar introuvable"}
       </h1>
