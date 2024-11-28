@@ -10,12 +10,12 @@ export default function Home() {
         <div className="flex flex-row items-center my-12">
           <Link to="/avatar">
             <button className="px-4 py-2 font-bold text-white bg-yellow-600 rounded-full hover:bg-yellow-700 mx-8 w-64 h-20 text-lg shadow-md shadow-yellow-700 hover:shadow-amber-900">
-              Choisir l'avatar + Questions
+              Affichage de l'avatar
             </button>
           </Link>
           <Link to="/choice-avatar">
             <button className="px-4 py-2 font-bold text-white bg-yellow-600 rounded-full hover:bg-yellow-700 mx-8 w-64 h-20 text-lg shadow-md shadow-yellow-700 hover:shadow-amber-900">
-              Affichage de l'avatar
+              Choix de l'avatar + Questions
             </button>
           </Link>
         </div>
