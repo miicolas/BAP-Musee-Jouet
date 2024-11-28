@@ -1,3 +1,6 @@
+import {clsx} from 'clsx';
+import {twMerge} from 'tailwind-merge';
+
 export const questions = [
     {
         avatars: [
@@ -25,6 +28,27 @@ export const questions = [
                         answer:
                             "Barbie est populaire en raison de sa capacité à inspirer la créativité et à encourager les jeunes à explorer diverses carrières.",
                         sound: "minecraft",
+                    },
+                    {
+                        id: 4,
+                        question: "Comment Barbie se transforme-t-elle ?",
+                        answer:
+                            "Barbie se transforme en plusieurs rôles, y compris médecin, astronaute, et bien plus encore.",
+                        sound: "meow",
+                    },
+                    {
+                        id: 5,
+                        question: "Pourquoi Barbie est-elle populaire ?",
+                        answer:
+                            "Barbie est populaire en raison de sa capacité à inspirer la créativité et à encourager les jeunes à explorer diverses carrières.",
+                        sound: "minecraft",
+                    },
+                    {
+                        id: 6,
+                        question: "Comment Barbie se transforme-t-elle ?",
+                        answer:
+                            "Barbie se transforme en plusieurs rôles, y compris médecin, astronaute, et bien plus encore.",
+                        sound: "meow",
                     },
                 ],
             },
@@ -104,3 +128,8 @@ export const avatars = [
     },
 
 ];
+
+
+export const cn = (...inputs) => {
+    return twMerge(clsx(inputs))
+}
