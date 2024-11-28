@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap");
+
+/* Encapsulation des styles sous .choice-avatar-page */
+.choice-avatar-page {
+  align-items: center;
+  padding: 30px 10px 50% 10px;
+  font-family: 'DM Sans', sans-serif;
+  transition: background-image 0.5s ease-in-out;
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.choice-avatar-page h1 {
+  font-size: 50px;
+  text-align: center;
+  
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.9), 0px 0px 15px rgba(255, 255, 255, 0.5);
+  margin-bottom: 30px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.choice-avatar-page input[type=radio] {
+  display: none;
+}
+
+.choice-avatar-page .card1 {
+  border-radius: 25px;
+  background: rgb(20, 153, 0);
+  border: solid 4px white;
+}
+
+.choice-avatar-page .card2 {
+  border-radius: 25px;
+  background-color: #e30614;
+  border: solid 4px white;
+}
+
+.choice-avatar-page .card3 {
+  border-radius: 25px;
+  background-color:#FEED01;
+  border: solid 4px white;
+}
+
+.choice-avatar-page .card:not(.card1):not(.card2):not(.card3) {
+  background-color: transparent;
+  border: none;
+}
+
+.choice-avatar-page .card {
+  position: absolute;
+  width: 70%;
+  height: 100%;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 15px;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: none;
+  background-color: transparent ;
+  text-align: center;
+}
+
+.choice-avatar-page h2 {
+  color: rgb(0, 0, 0);
+  height: 20px;
+  font-size:1.5em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  
+  
+}
+
+.choice-avatar-page .box1,
+.choice-avatar-page .box2,
+.choice-avatar-page .box3 {
+  justify-content: start;
+  padding-left: 20px;
+  margin-top: 0;
+}
+
+.choice-avatar-page .container {
+  width: 100%;
+  max-width: 800px;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  transform-style: preserve-3d;
+}
+
+.choice-avatar-page .cards {
+  position: relative;
+  width: 90%;
+  height: 100%;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.choice-avatar-page img {
+  width: 400px;
+  height: 420px;
+  margin-top: 10px;
+  justify-content: center ;
+  object-fit: cover;
+  border: none;
+  font-size: 10px;
+}
+
+.choice-avatar-page #item-1:checked ~ .cards #song-3,
+.choice-avatar-page #item-2:checked ~ .cards #song-1,
+.choice-avatar-page #item-3:checked ~ .cards #song-2 {
+  transform: translateX(-40%) scale(0.8);
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.choice-avatar-page #item-1:checked ~ .cards #song-2,
+.choice-avatar-page #item-2:checked ~ .cards #song-3,
+.choice-avatar-page #item-3:checked ~ .cards #song-1 {
+  transform: translateX(40%) scale(0.8);
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.choice-avatar-page #item-1:checked ~ .cards #song-1,
+.choice-avatar-page #item-2:checked ~ .cards #song-2,
+.choice-avatar-page #item-3:checked ~ .cards #song-3 {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+  z-index: 1;
+}

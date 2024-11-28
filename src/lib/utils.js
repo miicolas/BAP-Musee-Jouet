@@ -1,3 +1,9 @@
+import bgKiki from '../assets/img/fondkiki.png'
+import Kiki from '../assets/img/kiki_p_transparent.png'
+import bgPlaymobile from "../assets/img/fondplaymobil.png"
+import Playmobile from "../assets/img/Playmobile.png"
+import bgSophie from "../assets/img/fondSophie.png"
+import Sophie from "../assets/img/Sophie.png"
 export const questions = [
     {
         avatars: [
@@ -83,24 +89,25 @@ export const questions = [
 export const avatars = [
     {
         id: 1,
-        name: "Barbie",
+        name: "Kiki",
         description: "Barbie est une des plus grandes idées de l'époque. Elle est un robot de mode, qui peut se transformer en femme, en homme ou en animal. Elle est très intelligente et elle peut parfois se faire des idées et des rêves.",
-        image: "https://gallerypng.com/wp-content/uploads/2024/07/hot-barbie-png-image.png",
-
+        image: Kiki,
+        background : bgKiki, 
     },
     {
         id: 2,
-        name: "Lego",
+        name: "Playmobile",
         description: "Lego est un des plus grands inventeurs de l'époque. Il a créé des objets de toutes sortes, des robots, des véhicules, des animaux, des personnages et des jeux. Il a également créé des produits pour la santé, la beauté et la mode.",
-        image: "https://png.pngtree.com/png-clipart/20230914/original/pngtree-lego-minifigure-vector-png-image_12154297.png",
-
+        image: Playmobile,
+        background: bgPlaymobile
     }
     ,
     {
         id: 3,
-        name: "Mario",
+        name: "Sophie La Girafe",
         description: "Mario est un des plus grands jeux vidéo de l'époque. Il a été créé par Nintendo et il a été le plus populaire des jeux vidéo de l'époque. Il est très populaire aujourd'hui et il est devenu un des plus grands dessinateurs de jeux vidéo.",
-        image: "https://i.pinimg.com/originals/e8/bb/b7/e8bbb719dff7201aa84de5495a9c8908.png",
+        image: Sophie,
+        background: bgSophie
     },
 
 ];
