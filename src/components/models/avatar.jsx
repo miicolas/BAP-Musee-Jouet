@@ -19,7 +19,7 @@ export default function Avatar({avatarID}) {
             name: "Lego",
             description:
                 "Lego est un des plus grands inventeurs de l'époque. Il a créé des objets de toutes sortes, des robots, des véhicules, des animaux, des personnages et des jeux. Il a également créé des produits pour la santé, la beauté et la mode.",
-            gltf: "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/survivor-male/model.gltf",
+            gltf: "/models/sophie_girafe_v1.gltf",
         },
     ];
 
