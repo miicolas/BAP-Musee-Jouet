@@ -7,7 +7,7 @@ export default function ChoiceAvatar() {
   return (
     <Layout>
       <Link to="/">
-        <button className="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700">
+        <button className="px-4 py-2 font-bold text-red-700 bg-blue-500 rounded hover:bg-blue-700">
           Retour
         </button>
       </Link>
