@@ -1,8 +1,9 @@
-import {useEffect, useState} from 'react';
-import socketIO from 'socket.io-client';
+import { useEffect, useState } from 'react';
 import socketSingleton from "../lib/socket-singleton";
+import { Button } from "./buttons.jsx";
+import classNames from "classnames";
 
-export default function CardQuestion({person}) {
+export default function CardQuestion({ person, color }) {
     const [socket, setSocket] = useState(null);
     useEffect(() => {
         setSocket(socketSingleton);
@@ -15,11 +16,12 @@ export default function CardQuestion({person}) {
     };
 
     return (
-        <div
-            className="p-4 m-4 transition-colors duration-300 bg-white border-2 border-gray-200 rounded-lg hover:border-blue-500 hover:bg-gray-200"
+        <Button
+            className={classNames(`bg-${color} text-white`)}
             onClick={handleClick}
+            styleType="primary"
         >
             <p>{person.question}</p>
-        </div>
+        </Button>
     );
 }

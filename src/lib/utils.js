@@ -1,6 +1,9 @@
 import {clsx} from 'clsx';
 import {twMerge} from 'tailwind-merge';
 
+export const merge = twMerge;
+export const cn = clsx;
+
 export const questions = [
   {
     avatars: [
@@ -144,7 +147,7 @@ export const questions = [
       },
       {
         id: 3,
-        name: "Mario",
+        name: "Kiki",
         questions: [
           {
             id: 1,
@@ -173,25 +176,25 @@ export const questions = [
 export const avatars = [
   {
     id: 1,
-    name: "Barbie",
+    name: "Sophie la Girafe",
     description:
-      "Barbie est une des plus grandes idées de l'époque. Elle est un robot de mode, qui peut se transformer en femme, en homme ou en animal. Elle est très intelligente et elle peut parfois se faire des idées et des rêves.",
+      "Sophie la Girafe est une des plus grandes idées de l'époque. Elle est un robot de mode, qui peut se transformer en femme, en homme ou en animal. Elle est très intelligente et elle peut parfois se faire des idées et des rêves.",
     image:
       "https://gallerypng.com/wp-content/uploads/2024/07/hot-barbie-png-image.png",
   },
   {
     id: 2,
-    name: "Lego",
+    name: "Playmobil",
     description:
-      "Lego est un des plus grands inventeurs de l'époque. Il a créé des objets de toutes sortes, des robots, des véhicules, des animaux, des personnages et des jeux. Il a également créé des produits pour la santé, la beauté et la mode.",
+      "Playmobil est un des plus grands inventeurs de l'époque. Il a créé des objets de toutes sortes, des robots, des véhicules, des animaux, des personnages et des jeux. Il a également créé des produits pour la santé, la beauté et la mode.",
     image:
       "https://png.pngtree.com/png-clipart/20230914/original/pngtree-lego-minifigure-vector-png-image_12154297.png",
   },
   {
     id: 3,
-    name: "Mario",
+    name: "Kiki",
     description:
-      "Mario est un des plus grands jeux vidéo de l'époque. Il a été créé par Nintendo et il a été le plus populaire des jeux vidéo de l'époque. Il est très populaire aujourd'hui et il est devenu un des plus grands dessinateurs de jeux vidéo.",
+      "Kiki est un des plus grands inventeurs de l'époque. Il a créé des objets de toutes sortes, des robots, des véhicules, des anim",
     image:
       "https://i.pinimg.com/originals/e8/bb/b7/e8bbb719dff7201aa84de5495a9c8908.png",
   },
