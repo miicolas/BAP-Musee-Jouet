@@ -206,7 +206,7 @@ export const questions = [
             id: 10,
             question: "Combien de Kiki ont été vendus ?",
             answer:
-              "Depuis ma création, plus de 100 millions de Kikis ont été vendus dans le monde entier ! J’ai plus de 1000 copains avec des tenues différentes.et ça plaît bien aux collectionneurs.",
+              "Depuis ma création, plus de 100 millions de Kikis ont été vendus dans le monde entier ! J’ai plus de 1000 copains avec des tenues différentes et ça plaît bien aux collectionneurs.",
           },
         ],
       },
