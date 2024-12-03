@@ -2,7 +2,7 @@ import { cn } from "../lib/utils";
 
 const styles = {
     primary:
-        `w-80 min-h-16 h-auto flex items-center justify-center rounded-full shadow-btnshadow mx-auto`,
+        `w-80 min-h-16 h-auto flex items-center justify-center rounded-full shadow-btnshadow mx-auto transition-colors duration-300`,
     secondary:
         `bg-gray-800 rounded-lg flex items-center justify-center h-12 hover:bg-gray-700 
         transition-colors`,

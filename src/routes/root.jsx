@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Layout from "../layout";
+import {Button} from "../components/buttons";
 
 export default function Home() {
   return (
@@ -7,16 +8,16 @@ export default function Home() {
       <div className="flex justify-center flex-col items-center h-screen bg-gray-50">
         <h1 className="text-5xl	font-bold uppercase">Page d'accueil Admin</h1>
         <h2 className="text-3xl font-semibold p-12">Choix de l'écran :</h2>
-        <div className="flex flex-row items-center my-12">
+        <div className="flex flex-row items-center my-12 gap-10">
           <Link to="/avatar">
-            <button className="px-4 py-2 font-bold text-white bg-yellow-600 rounded-full hover:bg-yellow-700 mx-8 w-64 h-20 text-lg shadow-md shadow-yellow-700 hover:shadow-amber-900 transition-all duration-500">
+            <Button className=" font-bold text-white bg-yellow-600 hover:bg-yellow-700   shadow-yellow-700 hover:shadow-amber-900" styleType={"primary"}>
               Affichage de l'avatar
-            </button>
+            </Button>
           </Link>
           <Link to="/choice-avatar">
-            <button className="px-4 py-2 font-bold text-white bg-yellow-600 rounded-full hover:bg-yellow-700 mx-8 w-64 h-20 text-lg shadow-md shadow-yellow-700 hover:shadow-amber-900 transition-all duration-500">
+            <Button className=" font-bold text-white bg-yellow-600 hover:bg-yellow-700   shadow-yellow-700 hover:shadow-amber-900" styleType={"primary"}>
               Choix de l'avatar + Questions
-            </button>
+            </Button>
           </Link>
         </div>
       </div>

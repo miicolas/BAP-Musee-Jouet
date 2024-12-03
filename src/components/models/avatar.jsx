@@ -9,14 +9,14 @@ export default function Avatar({avatarID}) {
     const avatars = [
         {
             id: 1,
-            name: "Barbie",
+            name: "Playmobil",
             description:
-                "Barbie est une des plus grands idées de l'époque. Elle est un robot de mode, qui peut se transformer en femme, en homme ou en animal. Elle est très intelligente et elle peut parfois se faire des idées et des rêves.",
-            gltf: "/models/sophie_girafe_v1.gltf",
+                "Playmobile est un des plus grands inventeurs de l'époque. Il a créé des objets de toutes sortes, des robots, des véhicules, des animaux, des personnages et des jeux. Il a également créé des produits pour la santé, la beauté et la mode.",
+            gltf: "/models/playmobile_v1.gltf",
         },
         {
             id: 2,
-            name: "Lego",
+            name: "Sophie la girafe",
             description:
                 "Lego est un des plus grands inventeurs de l'époque. Il a créé des objets de toutes sortes, des robots, des véhicules, des animaux, des personnages et des jeux. Il a également créé des produits pour la santé, la beauté et la mode.",
             gltf: "/models/sophie_girafe_v1.gltf",
