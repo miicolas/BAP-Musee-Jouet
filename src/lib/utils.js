@@ -137,29 +137,76 @@ export const questions = [
             answer:
               "Oui mais à notre création, nous avions que 4 articulations : la tête, les 2 bras et nous pouvions nous pencher en avant. C’est seulement en 1982 qu’on a pu tourner nos mains.",
           },
+          {
+            id: 10,
+            question: "Quel est le plus grand Playmobil qui a été créé ?",
+            answer:
+              "Mon plus grand copain mesure 5 mètres de haut. Tu peux le voir à l’occasion d’expositions particulières.",
+          },
         ],
       },
       {
         id: 3,
-        name: "Mario",
+        name: "Kiki",
         questions: [
           {
             id: 1,
-            question: "Qui est Mario ?",
-            answer:
-              "Mario est le personnage principal des jeux vidéo créés par Nintendo, connu pour sa lutte contre Bowser.",
+            question: "Quand as-tu été créé ?",
+            answer: "J’ai été créé le 26 janvier 1974, il y a plus de 50 ans.",
           },
           {
             id: 2,
-            question: "Quel est le but du jeu Mario ?",
+            question: "Où as-tu été imaginé ?",
             answer:
-              "Le but est souvent de sauver la princesse Peach et de vaincre les ennemis tout au long des niveaux.",
+              "J’ai été imaginé à Tokyo, au Japon, le pays du Soleil Levant.",
           },
           {
             id: 3,
-            question: "Pourquoi Mario est-il une icône des jeux vidéo ?",
+            question: "Qui t’a inventé ?",
             answer:
-              "Mario est une icône en raison de sa longévité, sa popularité et son rôle dans la popularisation des jeux vidéo.",
+              "C’est Yoshiaru Washino qui m’a inventé pour la société Sekiguchi, un grand fabricant de poupées au Japon.",
+          },
+          {
+            id: 4,
+            question: "Quel est ton vrai nom ?",
+            answer:
+              "Mon vrai nom en japonais est Montchit'tchi”. Il s’inspire des mots français “Mon petit” qu’on prononce “Mon puchi” en japonais. Il fait aussi allusion au mot anglais “monkey” qui veut dire singe et au son japonais “chu chu” que fait le bébé en suçant sa tétine car, comme tu as pu le voir, je suce mon pouce.",
+          },
+          {
+            id: 5,
+            question: "Portes-tu toujours les mêmes vêtements ?",
+            answer:
+              "Non, mes vêtements peuvent être changés à l’infini. Dès le début j’ai eu 12 tenues : salopette, jardinier, écolier, footballeur… J’ai des tenues de stars comme celle de Michael Jackson. Et j’ai même un costume de martien tout vert !",
+          },
+          {
+            id: 6,
+            question: "Quelle taille mesures-tu ?",
+            answer:
+              "Je mesure en général 19 cm de haut mais il existe maintenant les Bébichichis, des petits Kikis de 13 cm et des géants. Le plus grand mesure 75 cm !",
+          },
+          {
+            id: 7,
+            question: "Pourquoi t’appelle-t-on Kiki en France ?",
+            answer:
+              "Parce que mon nom japonais était difficile à prononcer donc mon fabricant français a voulu me donner un nom plus simple et plus vendeur. Il s’est inspiré du surnom qu’on donnait à un sportif français, Jean-Claude Killy, célèbre à l”époque car il avait gagné 3 médaille d’or en ski aux Jeux Olympique de 1968.",
+          },
+          {
+            id: 8,
+            question: "Pourquoi es-tu un singe ?",
+            answer:
+              "Je suis un singe car nous sommes des animaux amusants, malicieux et adorables et cela plaît beaucoup aux petits enfants.",
+          },
+          {
+            id: 9,
+            question: "As-tu changé depuis ta création ?",
+            answer:
+              "Mon visage est peint à la main donc moi et mes copains, nous n’avons jamais été exactement pareils. Moi, j’ai les yeux bleus comme les premiers kikis mais depuis une trentaine d’année, mes copains ont les yeux marrons. Certains ont même la fourrure en couleurs : rose, bleu…",
+          },
+          {
+            id: 10,
+            question: "Combien de Kiki ont été vendus ?",
+            answer:
+              "Depuis ma création, plus de 100 millions de Kikis ont été vendus dans le monde entier ! J’ai plus de 1000 copains avec des tenues différentes.et ça plaît bien aux collectionneurs.",
           },
         ],
       },
