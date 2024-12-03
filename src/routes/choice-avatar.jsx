@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { avatars } from "../lib/utils";
-import CardAvatar from "../components/card-avatar";
+import CardAvatar from "../components/cards/card-avatar.jsx";
 import Layout from "../layout";
 
 export default function ChoiceAvatar() {

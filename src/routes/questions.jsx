@@ -1,19 +1,20 @@
-import { Link, useParams } from "react-router-dom";
-import { questions } from "../lib/utils";
-import CardQuestion from "../components/card-question";
+import {Link, useParams} from "react-router-dom";
+import {questions} from "../lib/utils";
+import CardQuestion from "../components/cards/card-question.jsx";
 import Layout from "../layout";
 import useInactivityRedirect from "../lib/use-inactivity-redirect";
 import NoticesStars from "../components/notices-stars";
-import { useEffect, useState } from "react";
+import {useEffect, useState} from "react";
 import ModalNotices from "../components/modal-notices";
 import PlaymobilBackground from "../assets/images/bg-playmobil.png";
 import SophieBackground from "../assets/images/bg-sophie.png";
 import KikiBackground from "../assets/images/bg-kiki.png";
 import classNames from "classnames";
-import { ArrowLeft } from "lucide-react";
+import {ArrowLeft} from "lucide-react";
+import {Button} from "../components/buttons";
 
 export default function Questions() {
-    const { idavatar } = useParams();
+    const {idavatar} = useParams();
     const avatarId = parseInt(idavatar);
     const avatarData = questions[0].avatars.find(
         (avatar) => avatar.id === avatarId
@@ -59,16 +60,16 @@ export default function Questions() {
         setQuestionAlreadyAsked([...questionAlreadyAsked, questionId]);
         setReplacedElements({
             ...replacedElements,
-            [questionId]: { id: questionId, question: "New Element" }
+            [questionId]: {id: questionId, question: "New Element"}
         });
 
         setQuestionsToShow((prev) => (prev < 3 ? prev + 1 : 3));
     };
 
     return (
-        <Layout className="bg-no-repeat bg-cover bg-center" style={{ backgroundImage: `url(${background})` }}>
-            <NoticesStars openModal={() => setIsModalOpen(true)} />
-            {isModalOpen && <ModalNotices />}
+        <Layout className="bg-no-repeat bg-cover bg-center" style={{backgroundImage: `url(${background})`}}>
+            <NoticesStars openModal={() => setIsModalOpen(true)}/>
+            {isModalOpen && <ModalNotices/>}
             <div className="flex items-start p-8">
                 <Link to="/choice-avatar">
                     <button className={classNames('p-4 font-bold rounded-full text-white', {
@@ -76,7 +77,7 @@ export default function Questions() {
                         'bg-yellow-500': primaryColor === 'yellow-500',
                         'bg-green-500': primaryColor === 'green-500',
                     })}>
-                        <ArrowLeft size={24} />
+                        <ArrowLeft size={24}/>
                     </button>
                 </Link>
                 <div className='flex flex-col items-center gap-5 mx-auto -translate-x-10'>
@@ -89,23 +90,35 @@ export default function Questions() {
                     </div>
                 </div>
             </div>
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-                {filteredQuestions.length > 0 ? (
-                    filteredQuestions.map((question) => (
-                        <div key={question.id} onClick={() => handleClick(question.id)} className="cursor-pointer">
+            {filteredQuestions.length > 0 ? (
+                <div
+                    className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 h-[70vh] justify-center items-center p-10">
+                    {filteredQuestions.map((question) => (
+                        <div key={question.id} onClick={() => handleClick(question.id)}
+                             className="flex justify-center items-center cursor-pointer w-fit h-fit">
                             {replacedElements[question.id] ? (
-                                <div className="p-4 m-4 transition-colors duration-300 bg-white border-2 border-gray-200 rounded-lg hover:border-blue-500 hover:bg-gray-200">
+                                <div
+                                    className="p-4 m-4 transition-colors duration-300 bg-white border-2 border-gray-200 rounded-lg hover:border-blue-500 hover:bg-gray-200">
                                     {replacedElements[question.id].question}
                                 </div>
                             ) : (
                                 <CardQuestion key={question.id} person={question} color={primaryColor}/>
                             )}
                         </div>
-                    ))
-                ) : (
-                    <p>Aucune question trouvée pour cet avatar.</p>
-                )}
-            </div>
+                    ))}
+                </div>
+            ) : (
+                <div className="flex flex-col items-center justify-center h-[70vh]  text-white gap-4">
+                    <p className={`text-${primaryColor} font-bold text-2xl`}>Tu as répondu à toutes les questions</p>
+                    <p className="text-lg mb-8">Clique sur le bouton ci-dessous pour revenir à la sélection de
+                        l'avatar</p>
+                    <Button styleType="primary" className={"bg-red-400 text-white"} onClick={() => handleClick(1)}>Revenir à la
+                        sélection</Button>
+                </div>
+            )
+            }
+
+
         </Layout>
     );
 }

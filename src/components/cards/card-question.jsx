@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import socketSingleton from "../lib/socket-singleton";
-import { Button } from "./buttons.jsx";
+import socketSingleton from "../../lib/socket-singleton.js";
+import { Button } from "../buttons.jsx";
 import classNames from "classnames";
 
 export default function CardQuestion({ person, color }) {

@@ -11,7 +11,10 @@
 				0,
 				1,
 				2,
-				37
+				3,
+				38,
+				39,
+				40
 			]
 		}
 	],
@@ -34,6 +37,25 @@
 				0.033695194870233536,
 				0.5898669958114624,
 				-0.035472042858600616
+			]
+		},
+		{
+			"name":"Empty",
+			"rotation":[
+				0.48575854301452637,
+				0.513680100440979,
+				-0.5165570974349976,
+				0.4830530881881714
+			],
+			"scale":[
+				0.7202085852622986,
+				0.7202082872390747,
+				0.7202085256576538
+			],
+			"translation":[
+				0.1320996731519699,
+				4.247194766998291,
+				1.7869954109191895
 			]
 		},
 		{
@@ -97,7 +119,7 @@
 		},
 		{
 			"children":[
-				3
+				4
 			],
 			"name":"spine.001",
 			"rotation":[
@@ -119,7 +141,7 @@
 		},
 		{
 			"children":[
-				4
+				5
 			],
 			"name":"spine.002",
 			"rotation":[
@@ -141,7 +163,7 @@
 		},
 		{
 			"children":[
-				5
+				6
 			],
 			"name":"spine.003",
 			"rotation":[
@@ -182,7 +204,7 @@
 		},
 		{
 			"children":[
-				7
+				8
 			],
 			"name":"spine.010",
 			"rotation":[
@@ -204,7 +226,7 @@
 		},
 		{
 			"children":[
-				8
+				9
 			],
 			"name":"spine.009",
 			"rotation":[
@@ -245,7 +267,7 @@
 		},
 		{
 			"children":[
-				10
+				11
 			],
 			"name":"front_foot.L",
 			"rotation":[
@@ -267,7 +289,7 @@
 		},
 		{
 			"children":[
-				11
+				12
 			],
 			"name":"front_shin.L",
 			"rotation":[
@@ -289,7 +311,7 @@
 		},
 		{
 			"children":[
-				12
+				13
 			],
 			"name":"front_thigh.L",
 			"rotation":[
@@ -311,7 +333,7 @@
 		},
 		{
 			"children":[
-				13
+				14
 			],
 			"name":"shoulder.L",
 			"rotation":[
@@ -352,7 +374,7 @@
 		},
 		{
 			"children":[
-				15
+				16
 			],
 			"name":"front_foot.R",
 			"rotation":[
@@ -374,7 +396,7 @@
 		},
 		{
 			"children":[
-				16
+				17
 			],
 			"name":"front_shin.R",
 			"rotation":[
@@ -396,7 +418,7 @@
 		},
 		{
 			"children":[
-				17
+				18
 			],
 			"name":"front_thigh.R",
 			"rotation":[
@@ -418,7 +440,7 @@
 		},
 		{
 			"children":[
-				18
+				19
 			],
 			"name":"shoulder.R",
 			"rotation":[
@@ -478,11 +500,11 @@
 		},
 		{
 			"children":[
-				9,
-				14,
-				19,
+				10,
+				15,
 				20,
-				21
+				21,
+				22
 			],
 			"name":"spine.008",
 			"rotation":[
@@ -504,7 +526,7 @@
 		},
 		{
 			"children":[
-				22
+				23
 			],
 			"name":"spine.007",
 			"rotation":[
@@ -526,7 +548,7 @@
 		},
 		{
 			"children":[
-				23
+				24
 			],
 			"name":"spine.006",
 			"rotation":[
@@ -605,7 +627,7 @@
 		},
 		{
 			"children":[
-				27
+				28
 			],
 			"name":"foot.L",
 			"rotation":[
@@ -627,7 +649,7 @@
 		},
 		{
 			"children":[
-				28
+				29
 			],
 			"name":"shin.L",
 			"rotation":[
@@ -649,7 +671,7 @@
 		},
 		{
 			"children":[
-				29
+				30
 			],
 			"name":"thigh.L",
 			"rotation":[
@@ -690,7 +712,7 @@
 		},
 		{
 			"children":[
-				31
+				32
 			],
 			"name":"foot.R",
 			"rotation":[
@@ -712,7 +734,7 @@
 		},
 		{
 			"children":[
-				32
+				33
 			],
 			"name":"shin.R",
 			"rotation":[
@@ -734,7 +756,7 @@
 		},
 		{
 			"children":[
-				33
+				34
 			],
 			"name":"thigh.R",
 			"rotation":[
@@ -756,11 +778,11 @@
 		},
 		{
 			"children":[
-				24,
 				25,
 				26,
-				30,
-				34
+				27,
+				31,
+				35
 			],
 			"name":"spine.005",
 			"rotation":[
@@ -782,8 +804,8 @@
 		},
 		{
 			"children":[
-				6,
-				35
+				7,
+				36
 			],
 			"name":"spine.004",
 			"rotation":[
@@ -805,7 +827,7 @@
 		},
 		{
 			"children":[
-				36
+				37
 			],
 			"name":"metarig",
 			"rotation":[
@@ -823,6 +845,34 @@
 				-0.010439678095281124,
 				-0.004019796848297119,
 				-0.05413537099957466
+			]
+		},
+		{
+			"mesh":3,
+			"name":"Cube.002",
+			"scale":[
+				0.12959003448486328,
+				0.12959003448486328,
+				0.12959003448486328
+			],
+			"translation":[
+				-0.0033341683447360992,
+				0.48046597838401794,
+				-0.03239983320236206
+			]
+		},
+		{
+			"mesh":4,
+			"name":"Cube.003",
+			"scale":[
+				0.12959003448486328,
+				0.12959003448486328,
+				0.12959003448486328
+			],
+			"translation":[
+				-0.0033341683447360992,
+				0.48046597838401794,
+				-0.03239983320236206
 			]
 		}
 	],
@@ -849,6 +899,22 @@
 				],
 				"metallicFactor":0,
 				"roughnessFactor":0.7293577790260315
+			}
+		},
+		{
+			"doubleSided":true,
+			"name":"Material",
+			"pbrMetallicRoughness":{
+				"metallicFactor":0,
+				"roughnessFactor":0.5
+			}
+		},
+		{
+			"doubleSided":true,
+			"name":"Material.005",
+			"pbrMetallicRoughness":{
+				"metallicFactor":0,
+				"roughnessFactor":0.5
 			}
 		}
 	],
@@ -894,6 +960,34 @@
 					"material":1
 				}
 			]
+		},
+		{
+			"name":"Cube.002",
+			"primitives":[
+				{
+					"attributes":{
+						"POSITION":11,
+						"NORMAL":12,
+						"TEXCOORD_0":13
+					},
+					"indices":14,
+					"material":2
+				}
+			]
+		},
+		{
+			"name":"Cube.003",
+			"primitives":[
+				{
+					"attributes":{
+						"POSITION":15,
+						"NORMAL":16,
+						"TEXCOORD_0":17
+					},
+					"indices":18,
+					"material":3
+				}
+			]
 		}
 	],
 	"textures":[
@@ -911,42 +1005,42 @@
 	],
 	"skins":[
 		{
-			"inverseBindMatrices":11,
+			"inverseBindMatrices":19,
 			"joints":[
-				36,
+				37,
+				7,
 				6,
 				5,
 				4,
-				3,
-				35,
+				36,
+				25,
 				24,
 				23,
-				22,
+				10,
 				9,
 				8,
-				7,
+				15,
 				14,
 				13,
 				12,
 				11,
-				10,
+				20,
 				19,
 				18,
 				17,
 				16,
-				15,
-				20,
 				21,
-				25,
+				22,
 				26,
+				27,
+				31,
 				30,
 				29,
 				28,
-				27,
+				35,
 				34,
 				33,
-				32,
-				31
+				32
 			],
 			"name":"metarig"
 		}
@@ -1051,6 +1145,74 @@
 		{
 			"bufferView":11,
 			"componentType":5126,
+			"count":713,
+			"max":[
+				1.484969139099121,
+				3.620680570602417,
+				2.406172752380371
+			],
+			"min":[
+				-1.551135540008545,
+				-3.7679615020751953,
+				-2.4742324352264404
+			],
+			"type":"VEC3"
+		},
+		{
+			"bufferView":12,
+			"componentType":5126,
+			"count":713,
+			"type":"VEC3"
+		},
+		{
+			"bufferView":13,
+			"componentType":5126,
+			"count":713,
+			"type":"VEC2"
+		},
+		{
+			"bufferView":14,
+			"componentType":5123,
+			"count":1212,
+			"type":"SCALAR"
+		},
+		{
+			"bufferView":15,
+			"componentType":5126,
+			"count":324,
+			"max":[
+				1.5510129928588867,
+				5.859105587005615,
+				3.103822708129883
+			],
+			"min":[
+				-0.2829996943473816,
+				2.659381151199341,
+				0.5142340660095215
+			],
+			"type":"VEC3"
+		},
+		{
+			"bufferView":16,
+			"componentType":5126,
+			"count":324,
+			"type":"VEC3"
+		},
+		{
+			"bufferView":17,
+			"componentType":5126,
+			"count":324,
+			"type":"VEC2"
+		},
+		{
+			"bufferView":18,
+			"componentType":5123,
+			"count":1476,
+			"type":"SCALAR"
+		},
+		{
+			"bufferView":19,
+			"componentType":5126,
 			"count":34,
 			"type":"MAT4"
 		}
@@ -1124,8 +1286,56 @@
 		},
 		{
 			"buffer":0,
+			"byteLength":8556,
+			"byteOffset":126296,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":8556,
+			"byteOffset":134852,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":5704,
+			"byteOffset":143408,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":2424,
+			"byteOffset":149112,
+			"target":34963
+		},
+		{
+			"buffer":0,
+			"byteLength":3888,
+			"byteOffset":151536,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":3888,
+			"byteOffset":155424,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":2592,
+			"byteOffset":159312,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":2952,
+			"byteOffset":161904,
+			"target":34963
+		},
+		{
+			"buffer":0,
 			"byteLength":2176,
-			"byteOffset":126296
+			"byteOffset":164856
 		}
 	],
 	"samplers":[
@@ -1136,8 +1346,8 @@
 	],
 	"buffers":[
 		{
-			"byteLength":128472,
-			"uri":"sophie_girafe_v1.bin"
+			"byteLength":167032,
+			"uri":"Sophie%20Moins%20de%20Vecteurs%20%281%29.bin"
 		}
 	]
 }

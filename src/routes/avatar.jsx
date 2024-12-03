@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Canvas } from "@react-three/fiber";
-import Experience from "../components/models/experience";
+import Experience from "../components/experience.jsx";
 import { useEffect, useState } from "react";
 import Layout from "../layout";
 import TypeAnimationEffect from "../components/type-animation";

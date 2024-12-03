@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom";
 import {useEffect, useState} from "react";
-import socketSingleton from "../lib/socket-singleton";
-import Logo from "./logo";
+import socketSingleton from "../../lib/socket-singleton.js";
+import Logo from "../logo.jsx";
 
 export default function CardAvatar({person}) {
     const [socket, setSocket] = useState(null);

@@ -4,7 +4,7 @@ import {
     ContactShadows,
     Float,
   } from "@react-three/drei";
-  import Avatar from "./avatar";
+  import Avatar from "./avatar.jsx";
   
   export default function Experience ({avatarID}) {
     return (
