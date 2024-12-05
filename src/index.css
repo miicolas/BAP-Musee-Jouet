@@ -5,3 +5,7 @@
 .r3f-canvas {
     touch-action: none;
 }
+
+body{
+    background-color: aliceblue;
+}
