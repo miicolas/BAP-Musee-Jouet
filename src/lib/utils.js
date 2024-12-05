@@ -1,8 +1,6 @@
-import bgKiki from '../assets/img/fondkiki.png'
+
 import Kiki from '../assets/img/kiki_p_transparent.png'
-import bgPlaymobile from "../assets/img/fondplaymobil.png"
 import Playmobile from "../assets/img/Playmobile.png"
-import bgSophie from "../assets/img/fondSophie.png"
 import Sophie from "../assets/img/Sophie.png"
 export const questions = [
     {
@@ -92,22 +90,23 @@ export const avatars = [
         name: "Kiki",
         description: "Barbie est une des plus grandes idées de l'époque. Elle est un robot de mode, qui peut se transformer en femme, en homme ou en animal. Elle est très intelligente et elle peut parfois se faire des idées et des rêves.",
         image: Kiki,
-        background : bgKiki, 
+        
     },
     {
         id: 2,
-        name: "Playmobile",
+        name: "Playmobil",
         description: "Lego est un des plus grands inventeurs de l'époque. Il a créé des objets de toutes sortes, des robots, des véhicules, des animaux, des personnages et des jeux. Il a également créé des produits pour la santé, la beauté et la mode.",
         image: Playmobile,
-        background: bgPlaymobile
+        
     }
     ,
     {
         id: 3,
-        name: "Sophie La Girafe",
+        name: "Sophie",
+        name2: "La Girafe",
         description: "Mario est un des plus grands jeux vidéo de l'époque. Il a été créé par Nintendo et il a été le plus populaire des jeux vidéo de l'époque. Il est très populaire aujourd'hui et il est devenu un des plus grands dessinateurs de jeux vidéo.",
         image: Sophie,
-        background: bgSophie
+        
     },
 
 ];

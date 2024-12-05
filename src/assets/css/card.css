@@ -1,124 +1,121 @@
 @import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap");
 
-/* Encapsulation des styles sous .choice-avatar-page */
+/* Style global pour la page */
 .choice-avatar-page {
-  align-items: center;
-  padding: 30px 10px 50% 10px;
-  font-family: 'DM Sans', sans-serif;
-  transition: background-image 0.5s ease-in-out;
-  background-repeat: no-repeat;
-  background-size: cover; 
-  background-color: rgba(0, 0, 0, 0);
-}
-
-.choice-avatar-page h1 {
-  font-size: 50px;
-  text-align: center;
   
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  color: rgba(255, 255, 255, 0.95);
-  text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.9), 0px 0px 15px rgba(255, 255, 255, 0.5);
-  margin-bottom: 30px;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+  align-items: center;
+  padding: 30px 10px 4% 10px; /* Ajustement du padding en bas pour réduire l'espace */
+  font-family: 'DM Sans', sans-serif;
+  background: url("../img/background_selection.png") no-repeat;
+  background-size: cover;
+  
 }
 
+  .choice-avatar-page h1 {
+  font-size: 35px; /* Taille du texte */
+  font-weight: bold;
+  text-align: center;
+  color: white; /* Couleur du texte */
+  background: linear-gradient(90deg,#fac988,#fba32f); /* Couleurs du dégradé */
+  padding: 15px 30px; /* Espacement interne */
+  border-radius: 50px; /* Arrondir les bords */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Ombre sous le bouton */
+  display: inline-block; /* Pour ajuster la largeur au contenu */
+  text-transform: uppercase;
+  margin-left: 415px;
+  margin-bottom: 30px;
+  border-bottom:8px solid #ae7428 ;
+}
+
+
+/* Cache les boutons radio */
 .choice-avatar-page input[type=radio] {
   display: none;
 }
 
-.choice-avatar-page .card1 {
-  border-radius: 25px;
-  background: rgb(20, 153, 0);
-  border: solid 4px white;
-}
-
-.choice-avatar-page .card2 {
-  border-radius: 25px;
-  background-color: #e30614;
-  border: solid 4px white;
-}
-
-.choice-avatar-page .card3 {
-  border-radius: 25px;
-  background-color:#FEED01;
-  border: solid 4px white;
-}
-
-.choice-avatar-page .card:not(.card1):not(.card2):not(.card3) {
-  background-color: transparent;
-  border: none;
-}
-
+/* Styles spécifiques des cartes */
 .choice-avatar-page .card {
   position: absolute;
-  width: 70%;
-  height: 100%;
-  margin: auto;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  width: 350px;
+  height: 450px;
+  margin: 10px 500px 0px 500px;
+
+  
+  
+  
   border-radius: 15px;
   transition: transform 0.4s ease;
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   padding: 20px;
-  border: none;
-  background-color: transparent ;
   text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-.choice-avatar-page h2 {
-  color: rgb(0, 0, 0);
-  height: 20px;
-  font-size:1.5em;
+.choice-avatar-page .card1 {
+  background: linear-gradient(
+    168deg, 
+    #419D4F 23%, /* Couleur de la première section (33% de la hauteur) */
+    #8FCB98 23% 76%, /* Couleur de la deuxième section (entre 33% et 66%) */
+    #419D4F 76% /* Couleur de la troisième section (reste 34%) */
+  );
+}
+
+.choice-avatar-page .card2 {
+  background: linear-gradient(
+    168deg, 
+    #ff0a23 23%, /* Couleur de la première section (33% de la hauteur) */
+    #FF8282 23% 76%, /* Couleur de la deuxième section (entre 33% et 66%) */
+    #ff0a23 76% /* Couleur de la troisième section (reste 34%) */
+  );
+}
+.name2 {
+  color: white;
+  position: fixed;
+  text-align: center;
+  z-index: -1;
+}
+.choice-avatar-page .card3 {
+  background: linear-gradient(
+    168deg, 
+    #FDAB3D 23%, /* Couleur de la première section (33% de la hauteur) */
+    #FFD193  23% 76%, /* Couleur de la deuxième section (entre 33% et 66%) */
+    #FDAB3D 76% /* Couleur de la troisième section (reste 34%) */
+  );
+}
+
+.choice-avatar-page .card h2 {
+  position: fixed;
+  font-size: 45px;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  transform: rotate(-12deg);
+  margin-left: 40px;
+}
+
+.choice-avatar-page .card h2:first-child {
+  top: 20px;
+  left: 10px;
+}
+
+.choice-avatar-page .card h2:last-child {
+  bottom: 20px;
+  right: 10px;
+}
+
+/* Style des images */
+.choice-avatar-page .card .img {
   margin-top: 10px;
-  margin-bottom: 10px;
-  
-  
-}
-
-.choice-avatar-page .box1,
-.choice-avatar-page .box2,
-.choice-avatar-page .box3 {
-  justify-content: start;
-  padding-left: 20px;
-  margin-top: 0;
-}
-
-.choice-avatar-page .container {
-  width: 100%;
-  max-width: 800px;
-  height: 90%;
+  flex: 1;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  margin: auto;
-  transform-style: preserve-3d;
+  justify-content: center;
 }
 
-.choice-avatar-page .cards {
-  position: relative;
-  width: 90%;
-  height: 100%;
-  margin-top: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-.choice-avatar-page img {
-  width: 400px;
-  height: 420px;
-  margin-top: 10px;
-  justify-content: center ;
-  object-fit: cover;
-  border: none;
-  font-size: 10px;
-}
 
+/* Animation des cartes */
 .choice-avatar-page #item-1:checked ~ .cards #song-3,
 .choice-avatar-page #item-2:checked ~ .cards #song-1,
 .choice-avatar-page #item-3:checked ~ .cards #song-2 {
@@ -141,4 +138,151 @@
   transform: translateX(0) scale(1);
   opacity: 1;
   z-index: 1;
+}
+
+/* Style des boutons de navigation */
+.navigation-buttons {
+  display: flex;
+  justify-content:space-around;
+  
+  margin-top: 450px; 
+  margin-right: 40px;/* Réduction de l'espace sous les cartes */
+   /* Espace entre les boutons */
+}
+
+.navigation-buttons button {
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(90deg,#fac988,#fba32f);
+  
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.navigation-buttons button:focus {
+  outline: none;
+  box-shadow: 0 0 5px #FDAB3D;
+}
+
+
+
+
+.choice-avatar-page .img1 {
+  
+  border-radius: 15px;
+  
+  max-width: 450px;
+  max-height: 450px;
+  object-fit: contain;
+  
+}
+
+.choice-avatar-page .img2 {
+  
+  border-radius: 15px;
+  
+  max-width: 600px;
+  max-height: 600px;
+  object-fit: contain;
+}
+
+.choice-avatar-page .img3 {
+  
+  border-radius: 15px;
+  
+  max-width: 300px;
+  max-height: 300px;
+  object-fit: contain;
+  
+}
+
+
+
+
+
+
+
+@media (max-width:1366px){
+  .choice-avatar-page .card{
+    margin-left: 405px;
+    width: 450px;
+    height: 550px;
+
+  }
+
+  .choice-avatar-page{
+    padding: 30px 10px 9.2% 10px; 
+  }
+
+  .choice-avatar-page h1{
+    margin-left: 277px;
+    font-size: 50px;
+  }
+
+  .navigation-buttons {
+    margin-right: 100px;
+    margin-left: 100px;
+    margin-top: 580px; 
+    
+  }
+
+  .navigation-buttons button{
+    font-size: 28px;
+  }
+}
+
+@media (max-width:1180px){
+  .choice-avatar-page .card{
+    margin-left: 350px;
+    width: 350px;
+    height: 450px;
+  }
+
+  .choice-avatar-page{
+    padding: 30px 10px 9% 10px; 
+    
+  }
+
+  .choice-avatar-page h1{
+    margin-left: 260px;
+    font-size: 35px;
+  }
+
+  .navigation-buttons {
+    margin-right: 45px;
+    margin-left: 15px;
+    margin-top: 450px; 
+  }
+  .navigation-buttons button{
+    font-size: 18px;
+  }
+}
+
+@media (max-width:1024px){
+  .choice-avatar-page .card{
+    margin-left: 335px;
+    width: 350px;
+    height: 450px;
+  }
+
+  .choice-avatar-page{
+    padding: 30px 10px 11.7% 10px; 
+  }
+
+  .choice-avatar-page h1{
+    margin-left: 250px;
+  }
+
+  .navigation-buttons {
+    margin-right: 25px;
+    margin-left: 15px;
+    margin-top: 450px; 
+  }
 }

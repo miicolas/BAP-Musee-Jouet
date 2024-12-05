@@ -1,12 +1,11 @@
-import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import socketSingleton from "../lib/socket-singleton";
-import Logo from "./logo";
 import "../assets/css/card.css";
 
 export default function CardAvatar({ person }) {
   const [socket, setSocket] = useState(null);
-  const navigate = useNavigate(); // Utilisation de useNavigate pour la navigation
+  const navigate = useNavigate(); // Hook pour la navigation
 
   useEffect(() => {
     setSocket(socketSingleton);
@@ -16,31 +15,31 @@ export default function CardAvatar({ person }) {
     if (socket) {
       socket.emit("avatar", person.id);
     }
-  };
-
-  const handleDoubleClick = (e) => {
-    e.stopPropagation(); // Empêche l'interférence avec d'autres événements
-    navigate(`/questions/${person.id}`); // Redirection programmatique
+    navigate(`/questions/${person.id}`); // Navigue vers la page de la question
   };
 
   return (
-    <label
+    <div
       className={`card card${person.id}`}
-      htmlFor={`item-${person.id}`}
       id={`song-${person.id}`}
-      onDoubleClick={handleDoubleClick} // Gestion du double clic
+      onClick={handleClick} // Ajout de l'événement onClick
+      style={{ cursor: "pointer" }} // Ajoute un pointeur pour montrer que c'est cliquable
     >
-      <div className={`card${person.id}`}>
-        
-        <div className="img">
-          <img src={person.image} alt={person.name} />
+      {/* Image de la carte */}
+      <div className="img">
+        <img
+          src={person.image}
+          alt={person.name}
+          className={`img${person.id}`} // Classe dynamique basée sur l'identifiant
+        />
         </div>
-
-        <div className={`box${person.id}`}>
-          <h2>{person.name}</h2>
-        </div>
-        
+      {/* Nom et texte de la carte */}
+      <div className={`box box${person.id}`}>
+        <h2>{person.name}</h2>
+        {person.name2 && (
+          <h2 className="name2">{person.name2}</h2> /* Affiche name2 si présent */
+        )}
       </div>
-    </label>
+    </div>
   );
 }
