@@ -53,20 +53,22 @@
 }
 
 .choice-avatar-page .card1 {
-  background: linear-gradient(
-    168deg, 
-    #419D4F 23%, /* Couleur de la première section (33% de la hauteur) */
-    #8FCB98 23% 76%, /* Couleur de la deuxième section (entre 33% et 66%) */
-    #419D4F 76% /* Couleur de la troisième section (reste 34%) */
-  );
-}
-
-.choice-avatar-page .card2 {
+ 
   background: linear-gradient(
     168deg, 
     #ff0a23 23%, /* Couleur de la première section (33% de la hauteur) */
     #FF8282 23% 76%, /* Couleur de la deuxième section (entre 33% et 66%) */
     #ff0a23 76% /* Couleur de la troisième section (reste 34%) */
+  );
+}
+
+.choice-avatar-page .card2 {
+  
+  background: linear-gradient(
+    168deg, 
+    #FDAB3D 23%, /* Couleur de la première section (33% de la hauteur) */
+    #FFD193  23% 76%, /* Couleur de la deuxième section (entre 33% et 66%) */
+    #FDAB3D 76% /* Couleur de la troisième section (reste 34%) */
   );
 }
 .name2 {
@@ -78,9 +80,9 @@
 .choice-avatar-page .card3 {
   background: linear-gradient(
     168deg, 
-    #FDAB3D 23%, /* Couleur de la première section (33% de la hauteur) */
-    #FFD193  23% 76%, /* Couleur de la deuxième section (entre 33% et 66%) */
-    #FDAB3D 76% /* Couleur de la troisième section (reste 34%) */
+    #419D4F 23%, /* Couleur de la première section (33% de la hauteur) */
+    #8FCB98 23% 76%, /* Couleur de la deuxième section (entre 33% et 66%) */
+    #419D4F 76% /* Couleur de la troisième section (reste 34%) */
   );
 }
 
@@ -178,8 +180,9 @@
   
   border-radius: 15px;
   
-  max-width: 450px;
-  max-height: 450px;
+  
+  max-width: 600px;
+  max-height: 600px;
   object-fit: contain;
   
 }
@@ -188,8 +191,9 @@
   
   border-radius: 15px;
   
-  max-width: 600px;
-  max-height: 600px;
+  
+  max-width: 300px;
+  max-height: 300px;
   object-fit: contain;
 }
 
@@ -197,8 +201,8 @@
   
   border-radius: 15px;
   
-  max-width: 300px;
-  max-height: 300px;
+  max-width: 450px;
+  max-height: 450px;
   object-fit: contain;
   
 }

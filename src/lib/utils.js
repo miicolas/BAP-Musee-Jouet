@@ -87,25 +87,27 @@ export const questions = [
 export const avatars = [
     {
         id: 1,
-        name: "Kiki",
-        description: "Barbie est une des plus grandes idées de l'époque. Elle est un robot de mode, qui peut se transformer en femme, en homme ou en animal. Elle est très intelligente et elle peut parfois se faire des idées et des rêves.",
-        image: Kiki,
+        name: "Playmobil",
+        description: "Lego est un des plus grands inventeurs de l'époque. Il a créé des objets de toutes sortes, des robots, des véhicules, des animaux, des personnages et des jeux. Il a également créé des produits pour la santé, la beauté et la mode.",
+        image: Playmobile,
+        
         
     },
     {
         id: 2,
-        name: "Playmobil",
-        description: "Lego est un des plus grands inventeurs de l'époque. Il a créé des objets de toutes sortes, des robots, des véhicules, des animaux, des personnages et des jeux. Il a également créé des produits pour la santé, la beauté et la mode.",
-        image: Playmobile,
+        name: "Sophie",
+        name2: "La Girafe",
+        description: "Mario est un des plus grands jeux vidéo de l'époque. Il a été créé par Nintendo et il a été le plus populaire des jeux vidéo de l'époque. Il est très populaire aujourd'hui et il est devenu un des plus grands dessinateurs de jeux vidéo.",
+        image: Sophie,
+        
         
     }
     ,
     {
         id: 3,
-        name: "Sophie",
-        name2: "La Girafe",
-        description: "Mario est un des plus grands jeux vidéo de l'époque. Il a été créé par Nintendo et il a été le plus populaire des jeux vidéo de l'époque. Il est très populaire aujourd'hui et il est devenu un des plus grands dessinateurs de jeux vidéo.",
-        image: Sophie,
+        name: "Kiki",
+        description: "Barbie est une des plus grandes idées de l'époque. Elle est un robot de mode, qui peut se transformer en femme, en homme ou en animal. Elle est très intelligente et elle peut parfois se faire des idées et des rêves.",
+        image: Kiki,
         
     },
 
