@@ -1,10 +1,14 @@
 import { Link, useParams } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { questions } from "../lib/utils";
 import CardQuestion from "../components/card-question";
 import Layout from "../layout";
 import useInactivityRedirect from "../lib/use-inactivity-redirect";
-import { useEffect } from "react";
-import Playmobilquestion from "../backgrounds/Playmobilquestion.png"; // Importer l'image
+import { useEffect, useState } from "react";
+import Playmobilquestion2 from "../backgrounds/Playmobilfond2.png";
+import Sophiefondquestion from "../backgrounds/Sophiefond.png";
+import kikifondquestion from "../backgrounds/kikifond.png";
 
 export default function Questions() {
   const { idavatar } = useParams();
@@ -13,59 +17,121 @@ export default function Questions() {
     (avatar) => avatar.id === avatarId
   );
   const avatarQuestions = avatarData ? avatarData.questions : [];
+
+  const [backgroundColor, setBackgroundColor] = useState("bg-red-500");
+  const [borderColor, setBorderColor] = useState("border-red-800");
+  const [textColor, setTextColor] = useState("text-white");
+  const [newButtonTextcolor, setNewButtonTextcolor] = useState("");
+  const [newButtonbgcolor, setNewButtonbgcolor] = useState(""); 
+  const [newButtonBorderColor , setnewButtonBorderColor] = useState("");
+
   useInactivityRedirect(120000);
 
   useEffect(() => {
-    // Vérifier si l'avatar est trouvé et changer l'image de fond en fonction de l'id
-    if (avatarData) {
-      let backgroundImage = "";
+    let backgroundImage = "";
+    let newBackgroundColor = "";
+    let newBorderColor = "";
+    let newTextColor = "";
+    let newButtonbgcolor = "";
+    let newButtonTextcolor = "";
+    let newButtonBorderColor = "";
 
-      // Déterminer l'image de fond selon l'ID de l'avatar
+    if (avatarData) {
       switch (avatarData.id) {
-        case 1: // ID de Barbie par exemple
-          backgroundImage = `url(${Playmobilquestion})`; // Image pour Barbie
+        case 1:
+          backgroundImage = `url(${Playmobilquestion2})`;
+          newBackgroundColor = "bg-gradient-to-r from-red-400 to-red-600";
+          newBorderColor = "border-red-600";
+          newTextColor = "text-white";
+          newButtonTextcolor = "text-red-800";
+          newButtonbgcolor = "bg-red-400";
+          newButtonBorderColor="border-amber-400";
           break;
-        case 2: // ID de Ken
-          backgroundImage = "url('/backgrounds/Pophie la girafe.png')"; // Image pour Ken
+        case 2:
+          backgroundImage = `url(${Sophiefondquestion})`;
+          newBackgroundColor = "bg-gradient-to-r from-amber-300 to-amber-400";
+          newBorderColor = "border-yellow-500";
+          newTextColor = "text-white";
+          newButtonTextcolor = "text-amber-700";
+          newButtonbgcolor = "bg-amber-300";
+          newButtonBorderColor="border-amber-300";
           break;
-        case 3: // ID d'un autre avatar
-          backgroundImage = "url('/backgrounds/other-avatar.png')"; // Image pour un autre avatar
+        case 3:
+          backgroundImage = `url(${kikifondquestion})`;
+          newBackgroundColor = "bg-gradient-to-r from-green-400 to-green-600"; // Gradient
+          newBorderColor = "border-emerald-600";
+          newTextColor = "text-white";
+          newButtonTextcolor = "text-green-800";
+          newButtonbgcolor = "bg-green-400";
+          newButtonBorderColor="border-amber-400";
           break;
-        // Ajouter des images pour d'autres avatars si nécessaire
         default:
-          backgroundImage = "url('/backgrounds/default-avatar.png')"; // Image par défaut
+          newBackgroundColor = "bg-gray-400";
+          newBorderColor = "border-gray-700";
+          newTextColor = "text-gray-900";
+          backgroundImage = "url('/backgrounds/default-avatar.png')";
+          newButtonTextcolor = "text-gray-800";
+          newButtonbgcolor = "bg-gray-800";
+          newButtonBorderColor="border-amber-400";
       }
 
-      // Appliquer l'image de fond
       document.body.style.backgroundImage = backgroundImage;
-      document.body.style.backgroundSize = "cover";  // Optionnel, pour couvrir tout l'écran
-      document.body.style.backgroundPosition = "center"; // Centrer l'image
+      document.body.style.backgroundSize = "cover";
+      document.body.style.backgroundPosition = "center";
+      document.body.style.backgroundRepeat = "no-repeat";
+
+      setBackgroundColor(newBackgroundColor);
+      setBorderColor(newBorderColor);
+      setTextColor(newTextColor);
+      setNewButtonTextcolor(newButtonTextcolor); 
+      setNewButtonbgcolor(newButtonbgcolor);
+      setnewButtonBorderColor(newButtonBorderColor);
     }
 
-    // Réinitialiser l'image de fond lors du départ de la page
     return () => {
       document.body.style.backgroundImage = "";
     };
-  }, [avatarData]); // Ce useEffect se déclenche chaque fois que avatarData change
+  }, [avatarData]);
 
   return (
     <Layout>
       <Link to="/choice-avatar">
-        <button className="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700">
-          Retour
-        </button>
+      <button className={`px-5 py-3 font-bold text-white ${backgroundColor} rounded-full m-6 mb-0`}>
+  <FontAwesomeIcon icon={faChevronLeft} size="2x" />
+</button>
+
+
       </Link>
-      <h1>
-        Questions pour {avatarData ? avatarData.name : "Avatar introuvable"}
-      </h1>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {avatarQuestions.length > 0 ? (
-          avatarQuestions.map((index) => (
-            <CardQuestion key={index.id} person={index} />
-          ))
-        ) : (
-          <p>Aucune question trouvée pour cet avatar.</p>
-        )}
+
+      <div className="text-center">
+        <h1
+          className={`m-6  mt-0 text-4xl font-bold ${textColor} backdrop-blur-2xl rounded-full w-1/3 py-4 mx-auto ${backgroundColor} border-b-8 ${borderColor}`}
+        >
+          Questions pour {avatarData ? avatarData.name : "Avatar introuvable"}
+        </h1> 
+        <h2 className={`font-bold m-6 mt-0 text-3xl ${newButtonTextcolor}`}>
+  Choisis ta question
+</h2>
+
+
+        <div className=" grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {avatarQuestions.length > 0 ? (
+            avatarQuestions.map((index) => (
+              <CardQuestion
+                key={index.id}
+                person={index}
+                backgroundColor={backgroundColor}
+                borderColor={borderColor}
+                textColor={textColor}
+                newButtonbgcolor={newButtonbgcolor}
+                newButtonTextcolor={newButtonTextcolor}
+                
+              />
+            ))
+          ) : (
+            <p>Aucune question trouvée pour cet avatar.</p>
+          )}
+        </div>
       </div>
     </Layout>
   );
