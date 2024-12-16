@@ -9,6 +9,7 @@ import { questions } from "../lib/utils";
 import socket from "../lib/socket-singleton";
 import { Meow, Bizon, Minecraft } from "../lib/sounds-import.js";
 import { AnimatePresence, motion } from "framer-motion";
+import { Button } from "../components/buttons";
 
 export default function Avatar() {
   const [response, setResponse] = useState(null);
@@ -54,7 +55,7 @@ export default function Avatar() {
         .find((avatar) => avatar.id === avatarID);
       if (avatar) {
         const question = avatar.questions.find(
-          (question) => question.id === socketResponse,
+          (question) => question.id === socketResponse
         );
         if (question) {
           setResponse(question.answer);
@@ -62,10 +63,10 @@ export default function Avatar() {
             question.id === 1
               ? Meow
               : question.id === 2
-                ? Bizon
-                : question.id === 3
-                  ? Minecraft
-                  : null,
+              ? Bizon
+              : question.id === 3
+              ? Minecraft
+              : null
           );
         }
       }
@@ -84,9 +85,12 @@ export default function Avatar() {
   return (
     <Layout>
       <Link to="/" className="absolute z-50 top-4 left-4">
-        <button className="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700">
+        <Button
+          className=" font-bold text-white bg-yellow-600 hover:bg-yellow-700   shadow-yellow-700 hover:shadow-amber-900"
+          styleType={"primary"}
+        >
           Retour
-        </button>
+        </Button>
       </Link>
 
       {avatarID ? (
@@ -109,17 +113,38 @@ export default function Avatar() {
               exit={{ opacity: 0, scale: 1.1 }}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="flex flex-col items-center justify-center h-screen bg-gray-900 text-white"
+              className="flex flex-col items-center justify-center h-screen bg-gradient-to-r from-yellow-200 via-gray-100 to-orange-300 text-black animate-background-wave"
             >
-              <h1 className="text-4xl font-bold mb-4">
-                Bienvenue sur l'Application Avatar
+              <h1 className="text-5xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-orange-700 via-orange-500 to-red-500">
+                Bienvenue sur l'Application du Musée du Jouet
               </h1>
-              <p className="text-lg mb-8">
-                Veuillez sélectionner un avatar pour commencer l'expérience.
+              <p className="text-lg mb-6 text-transparent bg-clip-text bg-gradient-to-r from-orange-700 via-orange-500 to-red-500">
+                Veuillez sélectionner un personnage pour commencer l'activité.
               </p>
-              <p className="text-sm text-gray-400">
-                En attente de la sélection d'un avatar en temps réel...
+              <p className="text-sm text-transparent bg-clip-text bg-gradient-to-r from-orange-700 via-orange-500 to-red-500 italic ">
+                En attente de la sélection d'un personnage...
               </p>
+
+              <style jsx>{`
+                @keyframes backgroundWave {
+                  0% {
+                    background-position: 0% 50%;
+                  }
+                  50% {
+                    background-position: 100% 50%;
+                  }
+
+                  100% {
+                    background-position: 0% 50%;
+                  }
+                 
+                }
+
+                .animate-background-wave {
+                  background-size: 200% 200%;
+                  animation: backgroundWave 20s ease-in-out infinite;
+                }
+              `}</style>
             </motion.div>
           )}
         </AnimatePresence>
