@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import socketSingleton from "../lib/socket-singleton";
-import "../assets/css/card.css";
+import socketSingleton from "../../lib/socket-singleton";
+import "../../assets/css/card.css";
 
 export default function CardAvatar({ person }) {
   const [socket, setSocket] = useState(null);
-  const navigate = useNavigate(); // Hook pour la navigation
+  const navigate = useNavigate();
+  console.log(person, "person");
 
   useEffect(() => {
     setSocket(socketSingleton);
@@ -15,30 +16,27 @@ export default function CardAvatar({ person }) {
     if (socket) {
       socket.emit("avatar", person.id);
     }
-    navigate(`/questions/${person.id}`); // Navigue vers la page de la question
+    navigate(`/questions/${person.id}`);
   };
 
   return (
     <div
       className={`card card${person.id}`}
       id={`song-${person.id}`}
-      onClick={handleClick} // Ajout de l'événement onClick
-      style={{ cursor: "pointer" }} // Ajoute un pointeur pour montrer que c'est cliquable
+      onClick={handleClick}
+      style={{ cursor: "pointer" }}
     >
-      {/* Image de la carte */}
       <div className="img">
         <img
           src={person.image}
           alt={person.name}
-          className={`img${person.id}`} // Classe dynamique basée sur l'identifiant
+          className={`img${person.id}`}
         />
-        </div>
-      {/* Nom et texte de la carte */}
+      </div>
+
       <div className={`box box${person.id}`}>
         <h2>{person.name}</h2>
-        {person.name2 && (
-          <h2 className="name2">{person.name2}</h2> /* Affiche name2 si présent */
-        )}
+        {person.name2 && <h2 className="name2">{person.name2}</h2>}
       </div>
     </div>
   );

@@ -3,7 +3,6 @@ import { avatars } from "../lib/utils";
 import CardAvatar from "../components/cards/card-avatar.jsx";
 import Layout from "../layout";
 import "../assets/css/card.css";
-import { Link } from "react-router-dom";
 
 export default function ChoiceAvatar() {
   const [currentIndex, setCurrentIndex] = useState(0);
