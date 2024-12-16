@@ -27,22 +27,38 @@ export default function Questions() {
   const [questionsToShow, setQuestionsToShow] = useState(1);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [background, setBackground] = useState(null);
-  const [primaryColor, setPrimaryColor] = useState(null);
-  const [secondaryColor, setSecondaryColor] = useState(null);
+  const [backgroundColor, setBackgroundColor] = useState(null);
+  const [borderColor, setBorderColor] = useState(null);
+  const [textColor, setTextColor] = useState(null);
+  const [newButtonTextcolor, setNewButtonTextcolor] = useState(null);
+  const [newButtonbgcolor, setNewButtonbgcolor] = useState(null);
+  const [newButtonBorderColor, setNewButtonBorderColor] = useState(null);
 
   useEffect(() => {
     if (avatarId === 1) {
       setBackground(PlaymobilBackground);
-      setPrimaryColor("red-500");
-      setSecondaryColor("red-700");
+      setBackgroundColor("bg-customRedTitre");
+      setBorderColor("border-red-600");
+      setTextColor("text-red-900");
+      setNewButtonTextcolor("text-customRedTextButton");
+      setNewButtonbgcolor("bg-custom-Redgradient");
+      setNewButtonBorderColor("border-customRedBorder");
     } else if (avatarId === 2) {
       setBackground(SophieBackground);
-      setPrimaryColor("yellow-500");
-      setSecondaryColor("yellow-700");
+      setBackgroundColor("bg-customYellowTitre");
+      setBorderColor("border-yellow-500");
+      setTextColor("text-customYellowTitre");
+      setNewButtonTextcolor("text-customYellowTexteButton");
+      setNewButtonbgcolor("bg-amber-300");
+      setNewButtonBorderColor("border-customYellowBorder");
     } else if (avatarId === 3) {
       setBackground(KikiBackground);
-      setPrimaryColor("green-500");
-      setSecondaryColor("green-700");
+      setBackgroundColor("bg-customGreenTitre");
+      setBorderColor("border-emerald-600");
+      setTextColor("text-customGreenTitre");
+      setNewButtonTextcolor("text-green-800");
+      setNewButtonbgcolor("bg-custom-Greengradient");
+      setNewButtonBorderColor("border-customGreenBorder");
     }
   }, [avatarId]);
 
@@ -76,32 +92,28 @@ export default function Questions() {
       <div className="flex items-start p-8">
         <Link to="/choice-avatar">
           <button
-            className={classNames("p-4 font-bold rounded-full text-white", {
-              "bg-red-500": primaryColor === "red-500",
-              "bg-yellow-500": primaryColor === "yellow-500",
-              "bg-green-500": primaryColor === "green-500",
-            })}
+            className={classNames(
+              `p-4 font-bold rounded-full text-white ${newButtonbgcolor} ${newButtonBorderColor} `,
+            )}
           >
             <ArrowLeft size={24} />
           </button>
         </Link>
         <div className="flex flex-col items-center gap-5 mx-auto -translate-x-10">
-          <div
-            className={`bg-${primaryColor} w-80 min-h-16 h-auto flex items-center justify-center rounded-full shadow-btnshadow mx-auto`}
-          >
-            <p className="text-white text-2xl font-bold">
+          <div>
+            <p className={`text-5xl font-bold ${textColor}`}>
               {avatarData ? avatarData.name : "Avatar introuvable"}
             </p>
           </div>
           <div>
-            <p className={`text-${primaryColor} font-bold text-2xl`}>
+            <p className={`${textColor} font-bold text-2xl`}>
               Choisis ta question
             </p>
           </div>
         </div>
       </div>
       {filteredQuestions.length > 0 ? (
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 h-[70vh] justify-center items-center p-10">
+        <div className="flex flex-col gap-10 h-[70vh] justify-center items-center p-10">
           {filteredQuestions.map((question) => (
             <div
               key={question.id}
@@ -116,15 +128,16 @@ export default function Questions() {
                 <CardQuestion
                   key={question.id}
                   person={question}
-                  color={primaryColor}
+                  bgColor={newButtonbgcolor}
+                  color={newButtonTextcolor}
                 />
               )}
             </div>
           ))}
         </div>
       ) : (
-        <div className="flex flex-col items-center justify-center h-[70vh]  text-white gap-4">
-          <p className={`text-${primaryColor} font-bold text-2xl`}>
+        <div className="flex flex-col items-center justify-center h-[70vh] text-white gap-4">
+          <p className={`${textColor} font-bold text-2xl`}>
             Tu as répondu à toutes les questions
           </p>
           <p className="text-lg mb-8">
