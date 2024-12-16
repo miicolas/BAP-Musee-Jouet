@@ -40,30 +40,30 @@ export default function Questions() {
       switch (avatarData.id) {
         case 1:
           backgroundImage = `url(${Playmobilquestion2})`;
-          newBackgroundColor = "bg-gradient-to-r from-red-400 to-red-600";
+          newBackgroundColor = "bg-customRedTitre";
           newBorderColor = "border-red-600";
-          newTextColor = "text-white";
-          newButtonTextcolor = "text-red-800";
-          newButtonbgcolor = "bg-red-400";
-          newButtonBorderColor="border-amber-400";
+          newTextColor = "text-red-900";
+          newButtonTextcolor = "text-customRedTextButton";
+          newButtonbgcolor = "bg-custom-Redgradient";
+          newButtonBorderColor="border-customRedBorder";
           break;
         case 2:
           backgroundImage = `url(${Sophiefondquestion})`;
-          newBackgroundColor = "bg-gradient-to-r from-amber-300 to-amber-400";
+          newBackgroundColor = "bg-customYellowTitre";
           newBorderColor = "border-yellow-500";
-          newTextColor = "text-white";
-          newButtonTextcolor = "text-amber-700";
+          newTextColor = "text-customYellowTitre";
+          newButtonTextcolor = "text-customYellowTexteButton";
           newButtonbgcolor = "bg-amber-300";
-          newButtonBorderColor="border-amber-300";
+          newButtonBorderColor="border-customYellowBorder";
           break;
         case 3:
           backgroundImage = `url(${kikifondquestion})`;
-          newBackgroundColor = "bg-gradient-to-r from-green-400 to-green-600"; // Gradient
+          newBackgroundColor = "bg-customGreenTitre"; 
           newBorderColor = "border-emerald-600";
-          newTextColor = "text-white";
+          newTextColor = "text-customGreenTitre";
           newButtonTextcolor = "text-green-800";
-          newButtonbgcolor = "bg-green-400";
-          newButtonBorderColor="border-amber-400";
+          newButtonbgcolor = "bg-custom-Greengradient";
+          newButtonBorderColor="border-customGreenBorder";
           break;
         default:
           newBackgroundColor = "bg-gray-400";
@@ -105,11 +105,11 @@ export default function Questions() {
 
       <div className="text-center">
         <h1
-          className={`m-6  mt-0 text-4xl font-bold ${textColor} backdrop-blur-2xl rounded-full w-1/3 py-4 mx-auto ${backgroundColor} border-b-8 ${borderColor}`}
+          className={`m-6  mt-0 text-8xl font-bold  ${textColor} `}
         >
-          Questions pour {avatarData ? avatarData.name : "Avatar introuvable"}
+          {avatarData ? avatarData.name : "Avatar introuvable"}
         </h1> 
-        <h2 className={`font-bold m-6 mt-0 text-3xl ${newButtonTextcolor}`}>
+        <h2 className={`font-bold m-0 mt-0 text-2xl ${textColor}`}>
   Choisis ta question
 </h2>
 
