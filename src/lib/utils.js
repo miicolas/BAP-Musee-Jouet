@@ -231,8 +231,7 @@ export const avatars = [
   },
   {
     id: 2,
-    name: "Sophie",
-    name2: "la Girafe",
+    name: "Sophie la Girafe",
     image: Sophie,
   },
   {
