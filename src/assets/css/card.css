@@ -1,117 +1,106 @@
 @import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap");
 
-/* Style global pour la page */
+body {
+  background: url("../img/background_selection.png") no-repeat;
+  background-size: cover;
+}
 .choice-avatar-page {
-    align-items: center;
-    padding: 30px 10px 4% 10px; /* Ajustement du padding en bas pour réduire l'espace */
-    font-family: "DM Sans", sans-serif;
-    background: url("../images/background_selection.png") no-repeat;
-    background-size: cover;
+  align-items: center;
+  font-family: "DM Sans", sans-serif;
 }
 
 .choice-avatar-page h1 {
-    font-size: 35px; /* Taille du texte */
-    font-weight: bold;
-    text-align: center;
-    color: white; /* Couleur du texte */
-    background: linear-gradient(
-        90deg,
-        #fac988,
-        #fba32f
-    ); /* Couleurs du dégradé */
-    padding: 15px 30px; /* Espacement interne */
-    border-radius: 50px; /* Arrondir les bords */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Ombre sous le bouton */
-    display: inline-block; /* Pour ajuster la largeur au contenu */
-    text-transform: uppercase;
-    margin-left: 415px;
-    margin-bottom: 30px;
-    border-bottom: 8px solid #ae7428;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  color: #da871a;
+  display: inline-block;
+  text-transform: uppercase;
+  margin-left: 32%;
+  margin-bottom: 1%;
 }
 
-/* Cache les boutons radio */
 .choice-avatar-page input[type="radio"] {
-    display: none;
+  display: none;
 }
 
-/* Styles spécifiques des cartes */
 .choice-avatar-page .card {
-    position: absolute;
-    width: 350px;
-    height: 450px;
-    margin: 10px 500px 0px 500px;
-
-    border-radius: 15px;
-    transition: transform 0.4s ease;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  width: 25%;
+  height: 65%;
+  margin: 1% 0% 0% 37%;
+  border-radius: 15px;
+  transition: transform 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .choice-avatar-page .card1 {
-    background: linear-gradient(
-        168deg,
-        #ff0a23 23%,
-        /* Couleur de la première section (33% de la hauteur) */ #ff8282 23% 76%,
-        /* Couleur de la deuxième section (entre 33% et 66%) */ #ff0a23 76%
-            /* Couleur de la troisième section (reste 34%) */
-    );
+  background: linear-gradient(
+    168deg,
+    #ff0a23 23%,
+    #ff6868 32%,
+    #ff8282 40%,
+    #ff8282 60%,
+    #ff6868 70%,
+    #ff0a23 87%
+  );
 }
 
 .choice-avatar-page .card2 {
-    background: linear-gradient(
-        168deg,
-        #fdab3d 23%,
-        /* Couleur de la première section (33% de la hauteur) */ #ffd193 23% 76%,
-        /* Couleur de la deuxième section (entre 33% et 66%) */ #fdab3d 76%
-            /* Couleur de la troisième section (reste 34%) */
-    );
+  background: linear-gradient(
+    168deg,
+    #fdab3d 23%,
+    #ffc16a 32%,
+    #ffd193 40%,
+    #ffd193 60%,
+    #ffc16a 70%,
+    #fdab3d 87%
+  );
 }
-.name2 {
-    color: white;
-    position: fixed;
-    text-align: center;
-    z-index: -1;
-}
+
 .choice-avatar-page .card3 {
-    background: linear-gradient(
-        168deg,
-        #419d4f 23%,
-        /* Couleur de la première section (33% de la hauteur) */ #8fcb98 23% 76%,
-        /* Couleur de la deuxième section (entre 33% et 66%) */ #419d4f 76%
-            /* Couleur de la troisième section (reste 34%) */
-    );
+  background: linear-gradient(
+    168deg,
+    #419d4f 23%,
+    #66b46d 32%,
+    #8fcb98 40%,
+    #8fcb98 60%,
+    #66b46d 70%,
+    #419d4f 87%
+  );
 }
 
 .choice-avatar-page .card h2 {
-    position: fixed;
-    font-size: 45px;
-    font-weight: bold;
-    color: white;
-    text-transform: uppercase;
-    transform: rotate(-12deg);
-    margin-left: 40px;
+  position: fixed;
+  font-size: 27px;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  margin-left: 15%;
+  margin-top: 100%;
 }
 
 .choice-avatar-page .card h2:first-child {
-    top: 20px;
-    left: 10px;
+  top: 5%;
+  left: 1%;
 }
 
 .choice-avatar-page .card h2:last-child {
-    bottom: 20px;
-    right: 10px;
+  bottom: 5%;
+  right: 15%;
 }
 
 /* Style des images */
 .choice-avatar-page .card .img {
-    margin-top: 10px;
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  margin-top: -30%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Animation des cartes */
@@ -139,130 +128,188 @@
     z-index: 1;
 }
 
-/* Style des boutons de navigation */
 .navigation-buttons {
-    display: flex;
-    justify-content: space-around;
-
-    margin-top: 450px;
-    margin-right: 40px; /* Réduction de l'espace sous les cartes */
-    /* Espace entre les boutons */
+  display: flex;
+  justify-content: space-around;
+  margin-top: 35%;
+  margin-right: 2%;
 }
 
 .navigation-buttons button {
-    padding: 10px 20px;
-    font-size: 18px;
-    font-weight: bold;
-    color: white;
-    background: linear-gradient(90deg, #fac988, #fba32f);
-
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 1% 2%;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(90deg, #fac988, #fba32f);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .navigation-buttons button:focus {
-    outline: none;
-    box-shadow: 0 0 5px #fdab3d;
+  outline: none;
+  box-shadow: 0 0 5px #fdab3d;
 }
 
 .choice-avatar-page .img1 {
-    border-radius: 15px;
-
-    max-width: 600px;
-    max-height: 600px;
-    object-fit: contain;
+  border-radius: 15px;
+  max-width: 200%;
+  max-height: 200%;
+  object-fit: contain;
 }
 
 .choice-avatar-page .img2 {
-    border-radius: 15px;
-
-    max-width: 300px;
-    max-height: 300px;
-    object-fit: contain;
+  border-radius: 15px;
+  max-width: 60%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .choice-avatar-page .img3 {
-    border-radius: 15px;
-
-    max-width: 450px;
-    max-height: 450px;
-    object-fit: contain;
+  border-radius: 15px;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  margin-left: 5%;
+  margin-top: 15%;
 }
 
-@media (max-width: 1366px) {
-    .choice-avatar-page .card {
-        margin-left: 405px;
-        width: 450px;
-        height: 550px;
-    }
+/*Ipad pro vertical*/
+@media (max-width: 1100px) and (max-height: 1400px) {
+  .choice-avatar-page h1 {
+    font-size: 60px !important;
+    margin-left: 8% !important;
+    margin-top: 8% !important;
+  }
 
-    .choice-avatar-page {
-        padding: 30px 10px 9.2% 10px;
-    }
+  .choice-avatar-page .card {
+    margin-left: 25%;
+    margin-top: 15%;
+    width: 50% !important;
+    height: 50% !important;
+  }
 
-    .choice-avatar-page h1 {
-        margin-left: 277px;
-        font-size: 50px;
-    }
+  .navigation-buttons {
+    margin-top: 88% !important;
+    margin-right: 1.5% !important;
+  }
 
-    .navigation-buttons {
-        margin-right: 100px;
-        margin-left: 100px;
-        margin-top: 580px;
-    }
-
-    .navigation-buttons button {
-        font-size: 28px;
-    }
+  .navigation-buttons button {
+    font-size: 30px !important;
+  }
 }
 
-@media (max-width: 1180px) {
-    .choice-avatar-page .card {
-        margin-left: 350px;
-        width: 350px;
-        height: 450px;
-    }
+/*Ipad pro horizontal*/
+@media (max-width: 1400px) and (max-height: 1100px) {
+  .choice-avatar-page .card {
+    margin-left: 33%;
+    width: 35%;
+    height: 60%;
+  }
 
-    .choice-avatar-page {
-        padding: 30px 10px 9% 10px;
-    }
+  .choice-avatar-page {
+    padding: 4% 2% 0% 0%;
+  }
 
-    .choice-avatar-page h1 {
-        margin-left: 260px;
-        font-size: 35px;
-    }
+  .navigation-buttons {
+    margin-right: -1%;
+    margin-top: 50%;
+  }
 
-    .navigation-buttons {
-        margin-right: 45px;
-        margin-left: 15px;
-        margin-top: 450px;
-    }
-    .navigation-buttons button {
-        font-size: 18px;
-    }
+  .navigation-buttons button {
+    font-size: 28px !important;
+  }
 }
 
-@media (max-width: 1024px) {
-    .choice-avatar-page .card {
-        margin-left: 335px;
-        width: 350px;
-        height: 450px;
-    }
+/*Ipad Air horizontal*/
+@media (max-width: 1240px) and (max-height: 900px) {
+  .choice-avatar-page h1 {
+    margin-left: 28%;
+  }
 
-    .choice-avatar-page {
-        padding: 30px 10px 11.7% 10px;
-    }
+  .navigation-buttons {
+    margin-top: 45% !important;
+    margin-top: 450px;
+  }
 
-    .choice-avatar-page h1 {
-        margin-left: 250px;
-    }
+  .choice-avatar-page .img1 {
+    max-width: 180%;
+  }
 
-    .navigation-buttons {
-        margin-right: 25px;
-        margin-left: 15px;
-        margin-top: 450px;
-    }
+  .choice-avatar-page .img2 {
+    max-width: 55%;
+    max-height: 100%;
+  }
+
+  .choice-avatar-page .img3 {
+    max-width: 95%;
+    max-height: 100%;
+  }
+
+  .navigation-buttons button {
+    font-size: 20px !important;
+  }
+}
+/*Ipad Air Vertical*/
+@media (max-width: 900px) and (max-height: 1240px) {
+
+  .choice-avatar-page h1 {
+    margin-left: 6%!important;
+    font-size: 55px !important;
+  }
+
+  .choice-avatar-page h2 {
+    font-size: 32px !important;
+    margin-top: 115%!important;
+  }
+
+
+  .choice-avatar-page .card {
+    margin-left: 25%;
+    margin-top: 10%;
+    width: 50% !important;
+    height: 50% !important;
+  }
+}
+
+
+/*Ipad mini vertical*/
+
+@media (max-width: 800px) and (max-height: 1100px) {
+  .choice-avatar-page h1 {
+    margin-left: 7.5%!important;
+    font-size: 50px !important;
+  }
+
+  .choice-avatar-page h2 {
+    font-size: 29px !important;
+    margin-top: 105%!important;
+  }
+
+
+}
+
+/*Ipad mini horizontal*/
+@media (max-width: 1100px) and (max-height: 800px) {
+  .choice-avatar-page h1 {
+    margin-left: 22%!important;
+    font-size: 45px !important;
+    margin-top: 3%!important;
+  }
+
+
+  .choice-avatar-page .card {
+    margin-top: 3%;
+    width: 35%!important;
+    height: 60%!important;
+  }
+  
+  
+  .navigation-buttons {
+    margin-top: 50%!important;
+    margin-left: 1%!important;
+  }
+  
 }

@@ -36,7 +36,7 @@ export default function CardAvatar({ person }) {
 
       <div className={`box box${person.id}`}>
         <h2>{person.name}</h2>
-        {person.name2 && <h2 className="name2">{person.name2}</h2>}
+        
       </div>
     </div>
   );
