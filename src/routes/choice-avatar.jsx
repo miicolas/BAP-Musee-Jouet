@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { avatars } from "../lib/utils";
-import CardAvatar from "../components/card-avatar";
+import CardAvatar from "../components/cards/card-avatar.jsx";
 import Layout from "../layout";
 import "../assets/css/card.css";
 import { Link } from "react-router-dom";
