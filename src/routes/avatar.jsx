@@ -11,6 +11,15 @@ import { Meow, Bizon, Minecraft } from "../lib/sounds-import.js";
 import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "../components/buttons";
 
+const audioRun = (questionID) => {
+  const sound = {
+    1: Meow,
+    2: Bizon,
+    3: Minecraft,
+  };
+  return sound[questionID];
+};
+
 export default function Avatar() {
   const [response, setResponse] = useState(null);
   const [socketResponse, setSocketResponse] = useState(null);
@@ -59,15 +68,7 @@ export default function Avatar() {
         );
         if (question) {
           setResponse(question.answer);
-          setSound(
-            question.id === 1
-              ? Meow
-              : question.id === 2
-                ? Bizon
-                : question.id === 3
-                  ? Minecraft
-                  : null,
-          );
+          setSound(audioRun(question.id));
         }
       }
     }
