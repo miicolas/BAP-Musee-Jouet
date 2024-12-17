@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import socketSingleton from "../../lib/socket-singleton";
 import "../../assets/css/card.css";
 
-export default function CardAvatar({ person }) {
+export default function CardAvatar({ person, isSelected }) {
   const [socket, setSocket] = useState(null);
   const navigate = useNavigate();
 
@@ -25,9 +25,9 @@ export default function CardAvatar({ person }) {
       onClick={handleClick}
     >
       <img
-        src={person.image}
+        src={isSelected ? person.gif : person.image}
         alt={person.name}
-        className={`h-64 lg:h-96 object-contain`}
+        className={`h-64 lg:h-96 object-contain ${isSelected ? "selected" : ""}`}
       />
       <h2 className="font-bold text-3xl uppercase text-white">{person.name}</h2>
     </div>

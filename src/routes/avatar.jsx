@@ -55,7 +55,7 @@ export default function Avatar() {
         .find((avatar) => avatar.id === avatarID);
       if (avatar) {
         const question = avatar.questions.find(
-          (question) => question.id === socketResponse
+          (question) => question.id === socketResponse,
         );
         if (question) {
           setResponse(question.answer);
@@ -63,10 +63,10 @@ export default function Avatar() {
             question.id === 1
               ? Meow
               : question.id === 2
-              ? Bizon
-              : question.id === 3
-              ? Minecraft
-              : null
+                ? Bizon
+                : question.id === 3
+                  ? Minecraft
+                  : null,
           );
         }
       }
@@ -86,7 +86,7 @@ export default function Avatar() {
     <Layout>
       <Link to="/" className="absolute z-50 top-4 left-4">
         <Button
-          className=" font-bold text-white bg-yellow-600 hover:bg-yellow-700   shadow-yellow-700 hover:shadow-amber-900"
+          className=" font-bold text-white bg-yellow-600 hover:bg-yellow-700 shadow-yellow-700 hover:shadow-amber-900"
           styleType={"primary"}
         >
           Retour
@@ -115,7 +115,7 @@ export default function Avatar() {
               animate={{ opacity: 1, scale: 1 }}
               className="flex flex-col items-center justify-center h-screen bg-gradient-to-r from-yellow-200 via-gray-100 to-orange-300 text-black animate-background-wave"
             >
-              <h1 className="text-5xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-orange-700 via-orange-500 to-red-500">
+              <h1 className="text-5xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-orange-700 via-orange-500 to-red-500 text-center">
                 Bienvenue sur l'Application du Musée du Jouet
               </h1>
               <p className="text-lg mb-6 text-transparent bg-clip-text bg-gradient-to-r from-orange-700 via-orange-500 to-red-500">
@@ -125,7 +125,7 @@ export default function Avatar() {
                 En attente de la sélection d'un personnage...
               </p>
 
-              <style jsx>{`
+              <style>{`
                 @keyframes backgroundWave {
                   0% {
                     background-position: 0% 50%;
@@ -137,7 +137,6 @@ export default function Avatar() {
                   100% {
                     background-position: 0% 50%;
                   }
-                 
                 }
 
                 .animate-background-wave {
