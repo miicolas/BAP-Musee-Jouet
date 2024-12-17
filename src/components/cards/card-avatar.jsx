@@ -6,7 +6,6 @@ import "../../assets/css/card.css";
 export default function CardAvatar({ person }) {
   const [socket, setSocket] = useState(null);
   const navigate = useNavigate();
-  console.log(person, "person");
 
   useEffect(() => {
     setSocket(socketSingleton);
@@ -21,23 +20,16 @@ export default function CardAvatar({ person }) {
 
   return (
     <div
-      className={`card card${person.id}`}
+      className={`card card${person.id} cursor-pointer flex justify-center items-center gap-5`}
       id={`song-${person.id}`}
       onClick={handleClick}
-      style={{ cursor: "pointer" }}
     >
-      <div className="img">
-        <img
-          src={person.image}
-          alt={person.name}
-          className={`img${person.id}`}
-        />
-      </div>
-
-      <div className={`box box${person.id}`}>
-        <h2>{person.name}</h2>
-        
-      </div>
+      <img
+        src={person.image}
+        alt={person.name}
+        className={`h-64 lg:h-96 object-contain`}
+      />
+      <h2 className="font-bold text-3xl uppercase text-white">{person.name}</h2>
     </div>
   );
 }
