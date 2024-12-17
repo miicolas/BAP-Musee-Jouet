@@ -21,8 +21,8 @@ export default function ChoiceAvatar() {
 
   return (
     <Layout>
-      <div className="choice-avatar-page">
-        <h1>Choisissez votre Avatar</h1>
+      <div className="choice-avatar-page relative h-screen">
+        <h1 className="mx-auto">Choisissez votre Avatar</h1>
         <div className="container">
           {avatars.map((avatar, index) => (
             <input
