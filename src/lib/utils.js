@@ -3,6 +3,10 @@ import Playmobil from "../assets/images/playmobil.png";
 import Sophie from "../assets/images/sophie.png";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
+import KikiGif from "../assets/images/kiki.gif";
+import PlaymobilGif from "../assets/images/playmo.gif";
+import SophieGif from "../assets/images/sophie.gif";
+
 
 export const merge = twMerge;
 export const cn = clsx;
@@ -228,15 +232,19 @@ export const avatars = [
     id: 1,
     name: "Playmobil",
     image: Playmobil,
+    gif: PlaymobilGif,
   },
   {
     id: 2,
     name: "Sophie La Girafe",
     image: Sophie,
+    gif: SophieGif,
   },
   {
     id: 3,
     name: "Kiki",
     image: Kiki,
+    gif: KikiGif,
+    
   },
 ];

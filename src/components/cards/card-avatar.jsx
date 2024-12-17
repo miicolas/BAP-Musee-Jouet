@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import socketSingleton from "../../lib/socket-singleton";
 import "../../assets/css/card.css";
 
-export default function CardAvatar({ person }) {
+export default function CardAvatar({ person, isSelected }) {
   const [socket, setSocket] = useState(null);
   const navigate = useNavigate();
   console.log(person, "person");
@@ -28,15 +28,13 @@ export default function CardAvatar({ person }) {
     >
       <div className="img">
         <img
-          src={person.image}
+          src={isSelected ? person.gif : person.image}
           alt={person.name}
-          className={`img${person.id}`}
+          className={`img${person.id} ${isSelected ? 'selected' : ''}`}
         />
       </div>
-
       <div className={`box box${person.id}`}>
         <h2>{person.name}</h2>
-        
       </div>
     </div>
   );
