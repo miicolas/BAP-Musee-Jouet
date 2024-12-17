@@ -21,8 +21,6 @@ export default function Avatar({ avatarID }) {
     },
   ];
 
-  const avatar = avatars.find((avatar) => avatar.id === avatarID);
-
   return (
     <>
       {avatarID === 1 && <Playmobil />}

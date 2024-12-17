@@ -11,6 +11,7 @@ import { Meow, Bizon, Minecraft } from "../lib/sounds-import.js";
 import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "../components/buttons";
 
+// Set the sound for each question
 const audioRun = (questionID) => {
   const sound = {
     1: Meow,
@@ -30,6 +31,7 @@ export default function Avatar() {
   const [sound, setSound] = useState(null);
   const [show, setShow] = useState(true);
 
+  // Prevent right click
   const handleContextMenu = (event) => {
     event.preventDefault();
   };
@@ -41,13 +43,12 @@ export default function Avatar() {
     };
   }, []);
 
+  // Get the avatar ID and the question ID from the socket
   useEffect(() => {
     socket.on("question", (id) => {
-      console.log("Received question ID:", id);
       setSocketResponse(id);
     });
     socket.on("avatar", (id) => {
-      console.log("Received avatar ID:", id);
       setAvatarID(id);
     });
 
@@ -57,6 +58,7 @@ export default function Avatar() {
     };
   }, []);
 
+  // Get the response from the socket and set the sound
   useEffect(() => {
     if (socketResponse && avatarID) {
       const avatar = questions
@@ -74,10 +76,12 @@ export default function Avatar() {
     }
   }, [socketResponse, avatarID]);
 
+  // Play the sound when the response is set
   useEffect(() => {
     setAnimateKey((prevKey) => prevKey + 1);
   }, [response]);
 
+  // Play the sound when user authorizes it in the modal
   const handleAuthorization = () => {
     setSoundAuthorized(true);
     setIsModalOpen(false);

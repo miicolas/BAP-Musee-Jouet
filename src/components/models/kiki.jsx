@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import * as THREE from "three";
 
@@ -6,14 +6,14 @@ export default function Model(props) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF("models/kiki.glb");
   const { actions, names } = useAnimations(animations, group);
-  console.log(names, "names");
+  console.log(names, "animations");
 
   useEffect(() => {
     if (actions[names[0]]) {
       actions[names[0]]
         .reset()
         .fadeIn(0.5)
-        .setLoop(THREE.LoopRepeat, Infinity) // Boucle infinie
+        .setLoop(THREE.LoopRepeat, Infinity)
         .play();
     }
   }, [actions, names]);

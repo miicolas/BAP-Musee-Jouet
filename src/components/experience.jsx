@@ -1,11 +1,10 @@
 import { Environment, PresentationControls, Float } from "@react-three/drei";
-import { DirectionalLight } from "three";
 import Avatar from "./avatar.jsx";
 
 export default function Experience({ avatarID }) {
   return (
     <>
-      <Environment preset="apartment" />
+      <Environment preset="city" />
       <color attach="background" args={["#695b5b"]} />
       <PresentationControls
         global

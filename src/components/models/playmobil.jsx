@@ -13,7 +13,7 @@ export default function Model(props) {
       actions[names[0]]
         .reset()
         .fadeIn(0.5)
-        .setLoop(THREE.LoopRepeat, Infinity) // Boucle infinie
+        .setLoop(THREE.LoopRepeat, Infinity)
         .play();
     }
   }, [actions, names]);

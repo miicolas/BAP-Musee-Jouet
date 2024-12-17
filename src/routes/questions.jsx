@@ -14,12 +14,18 @@ import { ArrowLeft } from "lucide-react";
 import { Button } from "../components/buttons";
 
 export default function Questions() {
+  // Get the avatar id from the URL
   const { idavatar } = useParams();
   const avatarId = parseInt(idavatar);
+
+  // Get the questions for the avatar with the given id
   const avatarData = questions[0].avatars.find(
     (avatar) => avatar.id === avatarId,
   );
+
   const avatarQuestions = avatarData ? avatarData.questions : [];
+
+  // Redirect to the choice-avatar page after 2 minutes of inactivity
   useInactivityRedirect(120000);
 
   const [questionAlreadyAsked, setQuestionAlreadyAsked] = useState([]);
@@ -62,16 +68,19 @@ export default function Questions() {
     }
   }, [avatarId]);
 
+  // Filter the questions that have not been asked yet
   const filteredQuestions = avatarQuestions
     .filter((question) => !questionAlreadyAsked.includes(question.id))
     .slice(0, questionsToShow);
 
+  // Show the modal if all questions have been asked
   useEffect(() => {
     if (filteredQuestions.length === 0 && questionAlreadyAsked.length > 0) {
       setIsModalOpen(true);
     }
   }, [filteredQuestions, questionAlreadyAsked]);
 
+  // Replace the question with a new element when clicked
   const handleClick = (questionId) => {
     setQuestionAlreadyAsked([...questionAlreadyAsked, questionId]);
     setReplacedElements({
