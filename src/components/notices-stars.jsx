@@ -22,9 +22,9 @@ export default function NoticesStars({ openModal }) {
 
       <div className="flex flex-col items-center">
         <motion.span variants={labelTextVariants} className="w-24">
-          Star
+          {isLiked ? "Merci" : "J'aime"}
           <motion.span variants={successTextVariants} className="success">
-            red
+            {isLiked ? " !" : ""}
           </motion.span>
         </motion.span>
       </div>
