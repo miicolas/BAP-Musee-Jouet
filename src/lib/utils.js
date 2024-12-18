@@ -165,12 +165,14 @@ export const questions = [
             id: 1,
             question: "Quand as-tu été créé ?",
             answer: "J’ai été créé le 26 janvier 1974, il y a plus de 50 ans.",
+            sound: "bizon",
           },
           {
             id: 2,
             question: "Où as-tu été imaginé ?",
             answer:
               "J’ai été imaginé à Tokyo, au Japon, le pays du Soleil Levant.",
+            sound: "meow",
           },
           {
             id: 3,

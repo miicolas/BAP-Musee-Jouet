@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import * as THREE from "three";
 
@@ -6,17 +6,34 @@ export default function Model(props) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF("models/kiki.glb");
   const { actions, names } = useAnimations(animations, group);
-  console.log(names, "animations");
+  const [currentActionIndex, setCurrentActionIndex] = useState(
+    Math.floor(Math.random() * Object.keys(actions).length),
+  );
 
   useEffect(() => {
-    if (actions[names[0]]) {
-      actions[names[0]]
-        .reset()
-        .fadeIn(0.5)
-        .setLoop(THREE.LoopRepeat, Infinity)
-        .play();
+    if (actions[names[currentActionIndex]]) {
+      const currentAction = actions[names[currentActionIndex]];
+      currentAction.reset().fadeIn(0.5).play();
+
+      const mixer = currentAction.getMixer();
+      const handleActionEnd = () => {
+        setCurrentActionIndex(
+          Math.floor(Math.random() * Object.keys(actions).length),
+        );
+      };
+
+      console.log(names, "animations");
+      console.log(currentActionIndex, "currentActionIndex");
+
+      mixer.addEventListener("finished", handleActionEnd);
+      mixer.addEventListener("loop", handleActionEnd);
+
+      return () => {
+        mixer.removeEventListener("finished", handleActionEnd);
+        mixer.removeEventListener("loop", handleActionEnd);
+      };
     }
-  }, [actions, names]);
+  }, [actions, names, currentActionIndex]);
 
   return (
     <group ref={group} {...props} dispose={null} position={[0, -2, 0]}>
