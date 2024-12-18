@@ -89,15 +89,6 @@ export default function Avatar() {
 
   return (
     <Layout>
-      <Link to="/" className="absolute z-50 top-4 left-4">
-        <Button
-          className=" font-bold text-white bg-yellow-600 hover:bg-yellow-700 shadow-yellow-700 hover:shadow-amber-900"
-          styleType={"primary"}
-        >
-          Retour
-        </Button>
-      </Link>
-
       {avatarID ? (
         <>
           <TypeAnimationEffect response={response} animateKey={animateKey} />
