@@ -12,8 +12,11 @@ import KikiBackground from "../assets/images/bg-kiki.png";
 import classNames from "classnames";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "../components/buttons";
+import { useNavigate } from "react-router-dom";
 
 export default function Questions() {
+  const navigate = useNavigate();
+
   // Get the avatar id from the URL
   const { idavatar } = useParams();
   const avatarId = parseInt(idavatar);
@@ -156,7 +159,7 @@ export default function Questions() {
           <Button
             styleType="primary"
             className={"bg-red-400 text-white"}
-            onClick={() => handleClick(1)}
+            onClick={() => navigate("/choice-avatar")}
           >
             Revenir à la sélection
           </Button>
