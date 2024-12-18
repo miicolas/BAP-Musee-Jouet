@@ -2,7 +2,7 @@ import { TypeAnimation } from "react-type-animation";
 
 export default function TypeAnimationEffect({ response, animateKey }) {
   return (
-    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-20 max-w-sm bg-amber-700 z-50 flex justify-center items-center p-6">
+    <div className="text-2xl text-black drop-shadow-[_2px_1px_rgba(255,255,255,0.6)] drop-shadow-2xl absolute bottom-0 left-1/2 -translate-x-1/2 h-20 max-w-xm z-50 flex justify-center items-center mb-10 ">
       {response ? (
         <TypeAnimation
           key={animateKey}
