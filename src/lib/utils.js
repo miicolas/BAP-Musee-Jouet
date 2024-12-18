@@ -22,6 +22,7 @@ export const questions = [
             question: "Quand as-tu été créé ?",
             answer:
               "J’ai été créé en 1974, il y a plus de 50 ans. Moi, je suis un modèle de 1986.",
+            sound: "meow",
           },
           {
             id: 2,

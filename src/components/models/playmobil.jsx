@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import * as THREE from "three";
 
@@ -6,22 +6,42 @@ export default function Model(props) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF("models/playmobil.glb");
   const { actions, names } = useAnimations(animations, group);
-  console.log(names, "animations");
+  const [currentActionIndex, setCurrentActionIndex] = useState(
+    Math.floor(Math.random() * Object.keys(actions).length),
+  );
 
   useEffect(() => {
-    if (actions[names[0]]) {
-      actions[names[0]]
-        .reset()
-        .fadeIn(0.5)
-        .setLoop(THREE.LoopRepeat, Infinity)
-        .play();
+    if (actions[names[currentActionIndex]]) {
+      const currentAction = actions[names[currentActionIndex]];
+      currentAction.reset().fadeIn(0.5).play();
+
+      const mixer = currentAction.getMixer();
+      const handleActionEnd = () => {
+        setCurrentActionIndex(
+          Math.floor(Math.random() * Object.keys(actions).length),
+        );
+      };
+
+      mixer.addEventListener("finished", handleActionEnd);
+      mixer.addEventListener("loop", handleActionEnd);
+
+      return () => {
+        mixer.removeEventListener("finished", handleActionEnd);
+        mixer.removeEventListener("loop", handleActionEnd);
+      };
     }
-  }, [actions, names]);
+  }, [actions, names, currentActionIndex]);
 
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group
+      ref={group}
+      {...props}
+      dispose={null}
+      position={[0, -2, 0]}
+      scale={2}
+    >
       <group name="Scene">
-        <group name="metarig" position={[0, -2, 0]} scale={2}>
+        <group name="metarig" position={[-0.006, 0.009, 0.001]} scale={0.916}>
           <group name="playmobile">
             <skinnedMesh
               name="Cube001"
@@ -71,16 +91,6 @@ export default function Model(props) {
           <primitive object={nodes.thighR} />
           <primitive object={nodes.neutral_bone} />
         </group>
-        <group
-          name="ex_coté"
-          position={[-4.286, -0.378, 0.963]}
-          rotation={[Math.PI / 2, 0, -Math.PI / 2]}
-        />
-        <group
-          name="Empty"
-          position={[1.007, -0.379, -2.33]}
-          rotation={[Math.PI / 2, 0, 0]}
-        />
       </group>
     </group>
   );

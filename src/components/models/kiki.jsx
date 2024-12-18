@@ -22,9 +22,6 @@ export default function Model(props) {
         );
       };
 
-      console.log(names, "animations");
-      console.log(currentActionIndex, "currentActionIndex");
-
       mixer.addEventListener("finished", handleActionEnd);
       mixer.addEventListener("loop", handleActionEnd);
 
