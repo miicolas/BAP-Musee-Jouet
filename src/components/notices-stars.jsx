@@ -21,8 +21,11 @@ export default function NoticesStars({ openModal }) {
       ) : null}
 
       <div className="flex flex-col items-center">
-        <motion.span variants={labelTextVariants} className="w-24">
-          {isLiked ? "Merci" : "J'aime"}
+        <motion.span
+          variants={labelTextVariants}
+          className={`${isLiked ? "pr-0 w-fit" : "pr-6 w-36"}`}
+        >
+          {isLiked ? "Merci" : "Votre avis"}
           <motion.span variants={successTextVariants} className="success">
             {isLiked ? " !" : ""}
           </motion.span>

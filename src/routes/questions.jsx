@@ -10,25 +10,18 @@ import PlaymobilBackground from "../assets/images/bg-playmobil.png";
 import SophieBackground from "../assets/images/bg-sophie.png";
 import KikiBackground from "../assets/images/bg-kiki.png";
 import classNames from "classnames";
-import { ArrowLeft } from "lucide-react";
+import { Undo, House } from "lucide-react";
 import { Button } from "../components/buttons";
 import { useNavigate } from "react-router-dom";
 
 export default function Questions() {
   const navigate = useNavigate();
-
-  // Get the avatar id from the URL
   const { idavatar } = useParams();
   const avatarId = parseInt(idavatar);
-
-  // Get the questions for the avatar with the given id
   const avatarData = questions[0].avatars.find(
     (avatar) => avatar.id === avatarId,
   );
-
   const avatarQuestions = avatarData ? avatarData.questions : [];
-
-  // Redirect to the choice-avatar page after 2 minutes of inactivity
   useInactivityRedirect(120000);
 
   const [questionAlreadyAsked, setQuestionAlreadyAsked] = useState([]);
@@ -71,27 +64,38 @@ export default function Questions() {
     }
   }, [avatarId]);
 
-  // Filter the questions that have not been asked yet
   const filteredQuestions = avatarQuestions
     .filter((question) => !questionAlreadyAsked.includes(question.id))
     .slice(0, questionsToShow);
 
-  // Show the modal if all questions have been asked
   useEffect(() => {
     if (filteredQuestions.length === 0 && questionAlreadyAsked.length > 0) {
       setIsModalOpen(true);
     }
   }, [filteredQuestions, questionAlreadyAsked]);
 
-  // Replace the question with a new element when clicked
   const handleClick = (questionId) => {
     setQuestionAlreadyAsked([...questionAlreadyAsked, questionId]);
     setReplacedElements({
       ...replacedElements,
       [questionId]: { id: questionId, question: "New Element" },
     });
-
     setQuestionsToShow((prev) => (prev < 3 ? prev + 1 : 3));
+  };
+
+  const handleUndoLastQuestion = () => {
+    if (questionAlreadyAsked.length > 0) {
+      const lastQuestionId =
+        questionAlreadyAsked[questionAlreadyAsked.length - 1];
+      setQuestionAlreadyAsked(questionAlreadyAsked.slice(0, -1));
+
+      const newReplacedElements = { ...replacedElements };
+      delete newReplacedElements[lastQuestionId];
+
+      setReplacedElements(newReplacedElements);
+
+      setQuestionsToShow((prev) => Math.max(1, prev - 1));
+    }
   };
 
   return (
@@ -102,15 +106,29 @@ export default function Questions() {
       <NoticesStars openModal={() => setIsModalOpen(true)} />
       {isModalOpen && <ModalNotices />}
       <div className="flex items-start p-8">
-        <Link to="/choice-avatar">
+        <div className="flex gap-4">
+          <Link to="/choice-avatar">
+            <button
+              className={classNames(
+                `p-4 font-bold rounded-full text-white ${newButtonbgcolor} ${newButtonBorderColor}`,
+              )}
+            >
+              <House size={24} />
+            </button>
+          </Link>
           <button
+            onClick={handleUndoLastQuestion}
+            disabled={questionAlreadyAsked.length === 0}
             className={classNames(
-              `p-4 font-bold rounded-full text-white ${newButtonbgcolor} ${newButtonBorderColor} `,
+              `p-4 font-bold rounded-full text-white ${newButtonbgcolor} ${newButtonBorderColor}`,
+              questionAlreadyAsked.length === 0
+                ? "opacity-50 cursor-not-allowed"
+                : "",
             )}
           >
-            <ArrowLeft size={24} />
+            <Undo size={24} />
           </button>
-        </Link>
+        </div>
         <div className="flex flex-col items-center gap-5 mx-auto -translate-x-10">
           <div>
             <p className={`text-5xl font-bold ${textColor}`}>

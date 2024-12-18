@@ -1,4 +1,4 @@
-import LOGO from './assets/images/logo.png';
+import LOGO from "./assets/images/logo.png";
 
 export default function Layout({ children, className, style }) {
   return (
@@ -11,9 +11,6 @@ export default function Layout({ children, className, style }) {
       </div>
       <div className="absolute bottom-0 left-0 z-10 p-4">
         <img src={LOGO} alt="logo" className="w-20 h-20" />
-          
-        
-          
       </div>
     </div>
   );

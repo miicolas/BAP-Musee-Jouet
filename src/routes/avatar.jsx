@@ -8,6 +8,7 @@ import { questions } from "../lib/utils";
 import socket from "../lib/socket-singleton";
 import { Meow, Bizon, Minecraft } from "../lib/sounds-import.js";
 import { AnimatePresence, motion } from "framer-motion";
+import { Button } from "../components/buttons.jsx";
 
 // Set the sound for each question
 const audioRun = (questionID) => {
@@ -113,7 +114,7 @@ export default function Avatar() {
               <h1 className="text-5xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-orange-700 via-orange-500 to-red-500 text-center">
                 Bienvenue sur l'Application du Musée du Jouet
               </h1>
-              <p className="text-lg mb-6 text-transparent bg-clip-text bg-gradient-to-r from-orange-700 via-orange-500 to-red-500">
+              <p className="text-center text-lg mb-6 text-transparent bg-clip-text bg-gradient-to-r from-orange-700 via-orange-500 to-red-500">
                 Veuillez sélectionner un personnage pour commencer l'activité.
               </p>
               <p className="text-sm text-transparent bg-clip-text bg-gradient-to-r from-orange-700 via-orange-500 to-red-500 italic ">
@@ -158,12 +159,13 @@ export default function Avatar() {
               <h2 className="text-2xl font-bold mb-4">
                 Bienvenue dans le jeu de rôle!
               </h2>
-              <button
-                className="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
+              <Button
+                className="bg-orange-500 text-white text-sm"
+                styleType="primary"
                 onClick={handleAuthorization}
               >
-                Ok
-              </button>
+                Accepter
+              </Button>
             </div>
           </motion.div>
         )}
