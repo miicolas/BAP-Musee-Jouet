@@ -13,7 +13,7 @@ export default function TypeAnimationEffect({ response, animateKey }) {
           repeat={0}
         />
       ) : (
-        <p>Aucune question n'a été répondu à pour l'instant.</p>
+        <p>Aucune question n'a été répondue à pour l'instant.</p>
       )}
     </div>
   );
