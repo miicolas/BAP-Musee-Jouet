@@ -1,11 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { avatars } from "../lib/utils";
 import CardAvatar from "../components/cards/card-avatar.jsx";
 import Layout from "../layout";
 import "../assets/css/card.css";
+import socketSingleton from "../lib/socket-singleton";
 
 export default function ChoiceAvatar() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [socket, setSocket] = useState(null);
+
+  useEffect(() => {
+    setSocket(socketSingleton);
+    if (socket) {
+      socket.emit("avatar", null);
+      socket.emit("question", null);
+    }
+  }, [socket]);
 
   const handlePrevious = () => {
     const prevIndex =

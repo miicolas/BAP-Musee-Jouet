@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Canvas } from "@react-three/fiber";
 import Experience from "../components/experience.jsx";
 import { useEffect, useState } from "react";
@@ -9,7 +8,6 @@ import { questions } from "../lib/utils";
 import socket from "../lib/socket-singleton";
 import { Meow, Bizon, Minecraft } from "../lib/sounds-import.js";
 import { AnimatePresence, motion } from "framer-motion";
-import { Button } from "../components/buttons";
 
 // Set the sound for each question
 const audioRun = (questionID) => {
@@ -49,6 +47,7 @@ export default function Avatar() {
       setSocketResponse(id);
     });
     socket.on("avatar", (id) => {
+      setResponse(null);
       setAvatarID(id);
     });
 
