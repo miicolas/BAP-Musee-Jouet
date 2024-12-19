@@ -8,11 +8,12 @@ import {
   Html,
 } from "@react-three/drei";
 
-import PlaymobilBackground from "../assets/images/fond_avatar_playmobil.png";
-import SophieBackground from "../assets/images/fond_avatar_sophie.png";
-import KikiBackground from "../assets/images/fond_avatar_kiki.png";
+import PlaymobilBackground from "../../assets/images/fond_avatar_playmobil.png";
+import SophieBackground from "../../assets/images/fond_avatar_sophie.png";
+import KikiBackground from "../../assets/images/fond_avatar_kiki.png";
 
 export default function Experience({ avatarID }) {
+  // Set the avatars
   const avatars = [
     {
       id: 1,
@@ -29,6 +30,7 @@ export default function Experience({ avatarID }) {
     { id: 3, name: "Kiki", background: KikiBackground, textcolor: "#1D5025" },
   ];
 
+  // Set the background and the text color
   const avatar = avatars.find((avatar) => avatar.id === avatarID);
   const background = avatar ? avatar.background : "#FFFFFF";
   const texture = useLoader(TextureLoader, background);

@@ -1,14 +1,14 @@
 import { Canvas } from "@react-three/fiber";
-import Experience from "../components/experience.jsx";
+import Experience from "../components/features/experience.jsx";
 import { useEffect, useState } from "react";
 import Layout from "../layout";
-import TypeAnimationEffect from "../components/type-animation";
-import SoundManager from "../components/sound-manager";
+import TypeAnimationEffect from "../components/common/type-animation.jsx";
+import SoundManager from "../components/common/sound-manager.jsx";
 import { questions } from "../lib/utils";
 import socket from "../lib/socket-singleton";
 import { Meow, Bizon, Minecraft } from "../lib/sounds-import.js";
 import { AnimatePresence, motion } from "framer-motion";
-import { Button } from "../components/buttons.jsx";
+import { Button } from "../components/common/buttons.jsx";
 
 // Set the sound for each question
 const audioRun = (questionID) => {

@@ -1,6 +1,6 @@
-import Playmobil from "./models/playmobil.jsx";
-import Kiki from "./models/kiki.jsx";
-import Sophie from "./models/sophie.jsx";
+import Playmobil from "../models/playmobil.jsx";
+import Kiki from "../models/kiki.jsx";
+import Sophie from "../models/sophie.jsx";
 
 export default function Avatar({ avatarID }) {
   return (

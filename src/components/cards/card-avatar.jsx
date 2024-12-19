@@ -7,10 +7,12 @@ export default function CardAvatar({ person, isSelected }) {
   const [socket, setSocket] = useState(null);
   const navigate = useNavigate();
 
+  // Set the socket
   useEffect(() => {
     setSocket(socketSingleton);
   }, []);
 
+  // Emit the avatar to the socket
   const handleClick = () => {
     if (socket) {
       socket.emit("avatar", person.id);

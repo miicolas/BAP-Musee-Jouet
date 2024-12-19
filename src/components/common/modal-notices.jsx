@@ -40,6 +40,7 @@ const StarRating = ({ handleLike }) => {
 export default function ModalNotices() {
   const [isOpen, setIsOpen] = useState(true);
 
+  // Handle the like button click
   const handleLike = async (rating) => {
     await fetch(`${import.meta.env.VITE_SOCKET_URL}/api/likes`, {
       method: "POST",
@@ -50,7 +51,6 @@ export default function ModalNotices() {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setIsOpen(false);
       })
       .catch((error) => {

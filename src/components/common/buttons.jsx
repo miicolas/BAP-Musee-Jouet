@@ -1,5 +1,6 @@
-import { cn } from "../lib/utils";
+import { cn } from "../../lib/utils.js";
 
+// Button styles
 const styles = {
   primary: `w-fit px-10 py-5 h-auto text-2xl font-medium flex items-center justify-center rounded-full shadow-btnshadow mx-auto transition-colors duration-300`,
 };

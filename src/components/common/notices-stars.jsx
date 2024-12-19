@@ -5,6 +5,7 @@ import { useState } from "react";
 export default function NoticesStars({ openModal }) {
   const [isLiked, setIsLiked] = useState(false);
 
+  // Handle the like button click
   const handleLike = () => {
     openModal();
     setIsLiked(true);
