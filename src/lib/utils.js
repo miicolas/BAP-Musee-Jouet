@@ -97,7 +97,7 @@ export const questions = [
         questions: [
           {
             id: 1,
-            question: "Quand as-tu été créée ?",
+            question: "Quand as-tu été crée ?",
             answer: "J’ai été créée le 25 mai 1961, il y a plus de 60 ans.",
             sound: "s_1",
           },
