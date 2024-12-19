@@ -6,19 +6,41 @@ import TypeAnimationEffect from "../components/common/type-animation.jsx";
 import SoundManager from "../components/common/sound-manager.jsx";
 import { questions } from "../lib/utils";
 import socket from "../lib/socket-singleton";
-import { Meow, Bizon, Minecraft } from "../lib/sounds-import.js";
+import {
+  Playmobil_sound_1,
+  Playmobil_sound_2,
+  Playmobil_sound_3,
+  Playmobil_sound_4,
+  Playmobil_sound_5,
+  Playmobil_sound_6,
+  Playmobil_sound_7,
+  Playmobil_sound_8,
+  Playmobil_sound_9,
+  Playmobil_sound_10,
+  Sophie_sound_1,
+  Sophie_sound_2,
+  Sophie_sound_3,
+  Sophie_sound_4,
+  Sophie_sound_5,
+  Sophie_sound_6,
+  Sophie_sound_7,
+  Sophie_sound_8,
+  Sophie_sound_9,
+  Sophie_sound_10,
+  Kiki_sound_1,
+  Kiki_sound_2,
+  Kiki_sound_3,
+  Kiki_sound_4,
+  Kiki_sound_5,
+  Kiki_sound_6,
+  Kiki_sound_7,
+  Kiki_sound_8,
+  Kiki_sound_9,
+  Kiki_sound_10,
+} from "../lib/sounds-import.js";
 import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "../components/common/buttons.jsx";
 
-// Set the sound for each question
-const audioRun = (questionID) => {
-  const sound = {
-    1: Meow,
-    2: Bizon,
-    3: Minecraft,
-  };
-  return sound[questionID];
-};
 
 export default function Avatar() {
   const [response, setResponse] = useState(null);
@@ -30,6 +52,53 @@ export default function Avatar() {
   const [sound, setSound] = useState(null);
   const [show, setShow] = useState(true);
 
+  
+  
+// Set the sound for each question for the selected avatar
+const audioRun = (questionID) => {
+  let sound = {};
+  if (avatarID == 1) {
+    sound = {
+      1: Playmobil_sound_1,
+      2: Playmobil_sound_2,
+      3: Playmobil_sound_3,
+      4: Playmobil_sound_4,
+      5: Playmobil_sound_5,
+      6: Playmobil_sound_6,
+      7: Playmobil_sound_7,
+      8: Playmobil_sound_8,
+      9: Playmobil_sound_9,
+      10: Playmobil_sound_10
+    };
+  }else if (avatarID == 2){
+    sound = {
+      1: Sophie_sound_1,
+      2: Sophie_sound_2,
+      3: Sophie_sound_3,
+      4: Sophie_sound_4,
+      5: Sophie_sound_5,
+      6: Sophie_sound_6,
+      7: Sophie_sound_7,
+      8: Sophie_sound_8,
+      9: Sophie_sound_9,
+      10: Sophie_sound_10
+    };
+   }else if (avatarID == 3) {
+    sound = {
+      1: Kiki_sound_1,
+      2: Kiki_sound_2,
+      3: Kiki_sound_3,
+      4: Kiki_sound_4,
+      5: Kiki_sound_5,
+      6: Kiki_sound_6,
+      7: Kiki_sound_7,
+      8: Kiki_sound_8,
+      9: Kiki_sound_9,
+      10: Kiki_sound_10
+    };
+   }
+  return sound[questionID];
+};
   // Prevent right click
   const handleContextMenu = (event) => {
     event.preventDefault();
@@ -66,7 +135,7 @@ export default function Avatar() {
         .find((avatar) => avatar.id === avatarID);
       if (avatar) {
         const question = avatar.questions.find(
-          (question) => question.id === socketResponse,
+          (question) => question.id === socketResponse
         );
         if (question) {
           setResponse(question.answer);
