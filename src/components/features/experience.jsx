@@ -46,7 +46,7 @@ export default function Experience({ avatarID }) {
       </mesh>
 
       <Html center>
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -mt-80 z-10 flex justify-center items-center w-full">
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -mt-96 z-10 flex justify-center items-center w-full">
           <h1
             className="text-6xl font-bold inline-block w-auto whitespace-nowrap mb-20 "
             style={{ color: color }}
